@@ -34,23 +34,28 @@ reset和revert的区别
 
 4.repo
 安装repo
+仓库目录和工作目录
+常用命令
+repo init
+repo sync
+repo upload
+repo status
+repo start dev
 
 
-4.gerrit
-5.Git常见问题
 
 
-
-
-
-Git基础1.Git工作流程
-注：
-Workspace：工作区
-Index &amp;#x2F; Stage ：暂存区
-Repository：仓库区
-Remote：远程仓库
-工作区程序员进行开发改动的地方，是你当前看到的，也是最新的。平常我们开发就是拷贝远程仓库中的一个分支，基.."><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="魔法菜园" type="application/atom+xml">
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Codemon's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">git help</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">1.Git工作流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">工作区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">暂存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">2.Git环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">gerrit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">3.常用Git命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">HEAD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">branch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">push</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">实践操作：提交一次代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">merge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">rebase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">rebase和merge的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">reset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">revert</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">reset和revert的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">其他命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">4.repo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">安装repo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">4.gerrit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">5.Git常见问题</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/git"><i class="tag post-item-tag">git</i></a><a href="/tags/gerrit"><i class="tag post-item-tag">gerrit</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">git help</h1><time class="has-text-grey" datetime="2024-10-12T08:19:05.000Z">2024-10-12</time><article class="mt-2 post-content"><!-- toc -->
+4.Gerrit
+上传代码
+Change Number
+Change-Id
+Signed-Off-By
+上传change
+使用git push
+基本格式
+快捷方式:
+.."><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="魔法菜园" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Codemon's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">git help</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">1.Git工作流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">工作区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">暂存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">2.Git环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">gerrit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">3.常用Git命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">HEAD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">branch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">push</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">实践操作：提交一次代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">merge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">rebase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">rebase和merge的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">reset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">revert</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">reset和revert的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">其他命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">4.repo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">安装repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">仓库目录和工作目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">repo init</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">repo sync</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">repo upload</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">repo status</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">repo start dev</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">4.Gerrit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">上传代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">Change Number</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">Change-Id</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">Signed-Off-By</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">上传change</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">使用git push</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-text">基本格式</span></a></li><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-text">快捷方式:</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">使用repo upload</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">下载代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">5.Git常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">冲突问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">手动解决冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">remote unpack failed: error Missing tree xxx</span></a></li></ol></li></ol></li></ol></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/git"><i class="tag post-item-tag">git</i></a><a href="/tags/gerrit"><i class="tag post-item-tag">gerrit</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">git help</h1><time class="has-text-grey" datetime="2024-10-12T08:19:05.000Z">2024-10-12</time><article class="mt-2 post-content"><!-- toc -->
 
 <ul>
 <li><a href="#git%E5%9F%BA%E7%A1%80">Git基础</a><ul>
@@ -85,16 +90,51 @@ Remote：远程仓库
 </li>
 <li><a href="#4repo">4.repo</a><ul>
 <li><a href="#%E5%AE%89%E8%A3%85repo">安装repo</a></li>
+<li><a href="#%E4%BB%93%E5%BA%93%E7%9B%AE%E5%BD%95%E5%92%8C%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95">仓库目录和工作目录</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">常用命令</a><ul>
+<li><a href="#repo-init">repo init</a></li>
+<li><a href="#repo-sync">repo sync</a></li>
+<li><a href="#repo-upload">repo upload</a></li>
+<li><a href="#repo-status">repo status</a></li>
+<li><a href="#repo-start-dev">repo start dev</a></li>
 </ul>
 </li>
-<li><a href="#4gerrit">4.gerrit</a></li>
-<li><a href="#5git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">5.Git常见问题</a></li>
+</ul>
+</li>
+<li><a href="#4gerrit">4.Gerrit</a><ul>
+<li><a href="#%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81">上传代码</a><ul>
+<li><a href="#change-number">Change Number</a></li>
+<li><a href="#change-id">Change-Id</a></li>
+<li><a href="#signed-off-by">Signed-Off-By</a></li>
+<li><a href="#%E4%B8%8A%E4%BC%A0change">上传change</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8git-push">使用git push</a><ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F">基本格式</a></li>
+<li><a href="#%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F">快捷方式:</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8repo-upload">使用repo upload</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E4%BB%A3%E7%A0%81">下载代码</a></li>
+</ul>
+</li>
+<li><a href="#5git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">5.Git常见问题</a><ul>
+<li><a href="#%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98">冲突问题</a><ul>
+<li><a href="#%E6%89%8B%E5%8A%A8%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81">手动解决冲突</a></li>
+<li><a href="#remote-unpack-failed-error-missing-tree-xxx">remote unpack failed: error Missing tree xxx</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
 
-<h1><span id="git基础">Git基础</span></h1><h2><span id="1git工作流程">1.Git工作流程</span></h2><p><img src="/2024/10/12/git-help/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg" alt="流程图"></p>
+<h1><span id="git基础">Git基础</span></h1><blockquote>
+<p>本文档集合了各种软件管理工具包括repo、git、github、gerrit的基础知识和使用指南，帮助刚入职的软件工程师快速上手这些工具的使用。</p>
+</blockquote>
+<h2><span id="1git工作流程">1.Git工作流程</span></h2><p><img src="/2024/10/12/git-help/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg" alt="流程图"></p>
 <p>注：</p>
 <p>Workspace：工作区</p>
 <p>Index &#x2F; Stage ：暂存区</p>
@@ -163,6 +203,7 @@ $ <span class="hljs-built_in">cat</span> id_rsa.pub</code></pre>
 <pre><code class="hljs bash"><span class="hljs-built_in">cat</span> ~/.ssh/id_rsa.pub</code></pre>
 
 <p>将其内容复制. 粘贴到Gerrit的配置界面</p>
+<p><img src="/2024/10/12/git-help/image-20241015111720466.png" alt="image-20241015111720466"></p>
 <p><img src="/2024/10/12/git-help/image-20241014200311500.png" alt="image-20241014200311500"></p>
 <p><strong>配置本地信息</strong></p>
 <p>配置你的名字与邮箱, 此处xxxxx是你的邮箱前缀</p>
@@ -342,8 +383,6 @@ git diff                 <span class="hljs-comment">#显示暂存区和工作区
 git diff HEAD            <span class="hljs-comment">#显示工作区与当前分支最新commit之间的差异</span>
 git cherry-pick &lt;commit&gt; <span class="hljs-comment">#选择一个commit，合并当前分支</span></code></pre>
 
-
-
 <h2><span id="4repo">4.repo</span></h2><p>repo是Android为了方便管理多个git库而开发的Python脚本。repo的出现，并非为了取代git，而是为了让Android开发者更为有效的利用git。</p>
 <h3><span id="安装repo">安装repo</span></h3><p>Android源码包含数百个git库，仅仅是下载这么多git库就是一项繁重的任务，所以在下载源码时，Android就引入了repo。 Android官方推荐下载repo的方法是通过<strong>Linux curl</strong>命令，下载完后，为repo脚本添加可执行权限。</p>
 <p>安装repo(ubuntu):</p>
@@ -365,6 +404,200 @@ curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
 git config --global user.email username@xiaomi.com
 git config --global user.name username</code></pre>
 
+<p>repo对git命令进行了封装，提供了一套repo的命令集(包括init, sync等)，所有repo管理的自动化实现也都包含在这个git库中。 在第一次初始化的时候，repo会从远程把这个git库下载到本地。</p>
+<h3><span id="仓库目录和工作目录">仓库目录和工作目录</span></h3><p>仓库目录保存的是历史信息和修改记录，工作目录保存的是当前版本的信息。一般来说，一个项目的Git仓库目录（默认为.git目录）是位于工作目录下面的，但是Git支持将一个项目的Git仓库目录和工作目录分开来存放。 对于repo管理而言，既有分开存放，也有位于工作目录存放的:</p>
+<ul>
+<li><strong>manifests</strong>： 仓库目录有两份拷贝，一份位于工作目录(.repo&#x2F;manifests)的.git目录下，另一份独立存放于.repo&#x2F;manifests.git</li>
+<li><strong>repo</strong>：仓库目录位于工作目录(.repo&#x2F;repo)的.git目录下</li>
+<li><strong>project</strong>：所有被管理git库的仓库目录都是分开存放的，位于.repo&#x2F;projects目录下。同时，也会保留工作目录的.git，但里面所有的文件都是到.repo的链接。这样，即做到了分开存放，也兼容了在工作目录下的所有git命令。</li>
+</ul>
+<p>既然.repo目录下保存了项目的所有信息，所有要拷贝一个项目时，只是需要拷贝这个目录就可以了。repo支持从本地已有的.repo中恢复原有的项目。</p>
+<h3><span id="常用命令">常用命令</span></h3><h4><span id="repo-init">repo init</span></h4><pre><code class="hljs bash">repo init -u url [options]</code></pre>
+
+<p>初始化要下载的代码</p>
+<p>在当前目录中安装 Repo。这样会创建一个 <code>.repo/</code> 目录，其中包含存放 Repo 源代码和标准 Android 清单文件的 Git 代码库。</p>
+<p><code>-u</code>：指定从中检索清单代码库的网址。</p>
+<p><code>-m</code>：选择代码库中的清单文件。如果未选择清单名称，则默认为 <code>default.xml</code>。</p>
+<p><code>-b</code>：指定修订版本，即特定的 manifest-branch。</p>
+<p><code>-g all</code>：如果加上-g all 参数，则会下载小米的modem源码，默认不下载modem源码</p>
+<p>例如：</p>
+<pre><code class="hljs bash">repo init -u ssh://&#123;yourname&#125;@git.mioffice.cn:29418/platform/manifest.git -b dev -m bsp-grus-q.xml --repo-url=ssh://&#123;yourname&#125;@git.mioffice.cn:29418/tools/repo.git --no-repo-verify <span class="hljs-comment"># 如果需要下载BP代码，在init的时候添加 -g all 参数，如下: $ repo init -g all -u ssh://&#123;yourname&#125;@git.mioffice.cn:29418/platform/manifest.git -b dev -m bsp-grus-q.xml --repo-url=ssh://&#123;yourname&#125;@git.mioffice.cn:29418/tools/repo.git --no-repo-verify </span></code></pre>
+
+<h4><span id="repo-sync">repo sync</span></h4><pre><code class="hljs bash">repo <span class="hljs-built_in">sync</span> [project-list]</code></pre>
+
+<p>下载新的更改并更新本地环境中的工作文件，基本上可以在所有 Git 代码库中完成 <code>git fetch</code>。如果在未使用任何参数的情况下运行 <code>repo sync</code>，则该命令会同步所有项目的文件。</p>
+<p>运行 <code>repo sync</code> 后，将出现以下情况：</p>
+<ul>
+<li>如果目标项目从未同步过，则 <code>repo sync</code> 相当于 <code>git clone</code>。远程代码库中的所有分支都会复制到本地项目目录中。</li>
+<li>如果目标项目以前同步过，则 <code>repo sync</code> 相当于：</li>
+</ul>
+<pre><code class="hljs bash">$ git remote update
+$ git rebase origin/branch</code></pre>
+
+<p> 其中 <code>branch</code> 是本地项目目录中当前已检出的分支。如果本地分支没有在跟踪远程代码库中的分支，则项目不会发生任何同步。</p>
+<ul>
+<li>如果 Git rebase 操作导致合并冲突，请使用常规 Git 命令（例如 <code>git rebase --continue</code>）来解决冲突。</li>
+</ul>
+<p>成功运行 <code>repo sync</code> 后，指定项目中的代码即处于最新状态，并已与远程代码库中的代码同步。</p>
+<p><code>-c</code>：仅获取服务器中的当前清单分支。</p>
+<p><code>-d</code>：将指定项目切换回清单修订版本。如果项目当前属于某个主题分支，但临时需要清单修订版本，则此选项会有所帮助。</p>
+<p><code>-f</code>：即使某个项目同步失败，也继续同步其他项目。</p>
+<pre><code class="hljs plaintext">-jthreadcount`：将同步操作拆分成多个线程，以更快地完成。切勿为其他任务预留 CPU，这会使计算机超负荷运行。如需查看可用 CPU 的数量，请先运行：`nproc --all</code></pre>
+
+<p><code>-q</code>：通过抑制状态消息来确保运行过程没有干扰。</p>
+<p><code>-s</code>：同步到当前清单中的 manifest-server 元素指定的一个已知良好 build。</p>
+<h4><span id="repo-upload">repo upload</span></h4><pre><code class="hljs bash">repo upload [project-list]</code></pre>
+
+<p>对于指定的项目，Repo 会将本地分支与最后一次 repo sync 时更新的远程分支进行比较。Repo 会提示您选择一个或多个尚未上传以供审核的分支。</p>
+<p>当 Gerrit 通过其服务器接收对象数据时，它会将每项提交转变成一项更改，以便审核者可以针对特定提交给出意见。如需将几项“检查点”提交合并为一项提交，请运行 <code>git rebase -i</code> 然后再运行 upload。</p>
+<p>如果在未使用任何参数的情况下运行 <code>repo upload</code>，则该命令会在所有项目中搜索要上传的更改。</p>
+<p>如果您只想上传当前已检出的 Git 分支，请使用标记 <code>--current-branch</code>（或简称 <code>--cbr</code>）。</p>
+<p><strong>向Gerrit提交</strong></p>
+<p><strong>比git push 更优在以下方面 ：</strong></p>
+<ol>
+<li>肯定不会提交错仓库</li>
+<li>manifest对的情况下，不会提交错分支</li>
+<li>避免拼写错误</li>
+<li>因gerrit现阶段配置的复杂，适合不太理解的小白用户</li>
+</ol>
+<p><code>repo upload .</code>：点不能省略，请配合<code>repo start .</code> 使用，当前仓库提交change到gerrit上</p>
+<p><code>repo upload --cbr .</code>：当前仓库有多个分支时，仅提交当前指向的分支的change到gerrit上，其他分支忽略</p>
+<p><code>repo upload -d .</code>：提交一个draft到gerrit上，draft的概念请参考 <a target="_blank" rel="noopener" href="https://wiki.n.miui.com/pages/viewpage.action?pageId=21226458">新版Gerrit使用说明</a> 中的 <a target="_blank" rel="noopener" href="https://wiki.n.miui.com/pages/viewpage.action?pageId=21226458#id-%E6%96%B0%E7%89%88Gerrit%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E-%E6%8F%90%E4%BA%A4%E4%B8%80%E4%B8%AA%E8%8D%89%E7%A8%BFdraft">提交一个草稿draft</a> 部分</p>
+<p><code>repo upload -t .</code>：提交change的同时，会将你的本地branch name作为该change的topic</p>
+<p><strong>补充一种情况，使用git命令创建分支使用repo upload</strong></p>
+<p> 创建分支时使用git checkout -b 新分支名 远程分支名 例如：</p>
+<pre><code class="hljs bash">work@c4-miui-miuigit-server01:~$ git branch -a
+* (no branch)
+remotes/m/alpha -&gt; miui/v10-p-begonia-cmcc
+remotes/m/dev -&gt; miui/miui-p-tucana-cmcc
+remotes/m/stable -&gt; miui/v10-p-begonia-mexico
+remotes/miui/f2-grus-p-operator
+remotes/miui/miui-p-ginkgo-claro
+remotes/miui/miui-p-olive-claro
+remotes/miui/miui-p-tucana-cmcc
+remotes/miui/miui-p-tucana-stable
+remotes/miui/miui-q-cepheus-stable
+remotes/miui/v10-o-cactus-mexico
+
+work@c4-miui-miuigit-bak01:~/hdd1/scm-use/teststable/frameworks/base$ git checkout -b mybranch remotes/miui/miui-p-tucana-stable
+<span class="hljs-comment">#这样创建的分支就可以使用repo upload</span></code></pre>
+
+<p>通常上传代码使用命令</p>
+<pre><code class="hljs bash">repo upload . --no-verify</code></pre>
+
+<h4><span id="repo-status">repo status</span></h4><p>查看所有仓库的git status</p>
+<p>适用于修改多个仓库后，统一查看当前状况</p>
+<h4><span id="repo-start-dev">repo start dev</span></h4><p>创建一个分支名为dev</p>
+<h2><span id="4gerrit">4.Gerrit</span></h2><h3><span id="上传代码">上传代码</span></h3><p>假设你已经下好了完整的代码,我们随便找一个小仓库来做个实验, 比如<code>platform/frameworks/ex</code>, 提交一个change</p>
+<p>1.<code>cd frameworks/ex</code></p>
+<p>2.随便新建一个文件, 比如<code>echo 1 &gt; 1.txt</code></p>
+<p>3.此时运行<code>git add</code>将文件添加到索引区. 然后运行<code>git commit -s</code>生成一笔提交. 注意提交的格式必须是如下格式, 否则提交到Gerrit上去之后, 会被机器人自动<code>Code Review -2</code>, 无法合入代码</p>
+<pre><code class="hljs sql">标题:副标题
+
+JIRA<span class="hljs-operator">-</span>ID
+
+描述
+
+Change<span class="hljs-operator">-</span>Id: xxxxxxxxxxxxx
+Signed<span class="hljs-operator">-</span>off<span class="hljs-operator">-</span><span class="hljs-keyword">by</span>: xxxxx <span class="hljs-operator">&lt;</span>xxxxxxx<span class="hljs-operator">&gt;</span></code></pre>
+
+<h5><span id="change-number">Change Number</span></h5><p>这个数字通常是在你push完了之后, gerrit自动生成的全局唯一ID.比如<code>https://gerrit.pt.mioffice.cn/c/2341170</code>这个url里的<code>2341170</code>就是这个change的<code>change Number</code>.</p>
+<h5><span id="change-id">Change-Id</span></h5><p><code>Change-Id</code>是Gerrit用来识别review层面的ID，<a target="_blank" rel="noopener" href="https://gerrit-review.googlesource.com/Documentation/user-changeid.html">官方文档</a>里会有详细解释</p>
+<p>本质上来说, 他是一串随机数, 如果你自己不指定, 那么<code>commit-msg hook</code>会自动帮你添加. 它通常位于这个仓库的<code>.git/hooks/commit-msg</code>里. 这就是为什么我们前一篇文章下载代码的时候, 复制命令需要复制<code>Clone with commit msg-hook</code>的内容.</p>
+<p>和<code>change Number</code>作为服务器上的唯一ID不同, <code>Change-Id</code>是内嵌在<code>commit-message</code>里的, 他对于<code>git</code>来说只是单纯的一个字符串而已. 但是对于Gerrit来说, 他标识了同一组Review的change. 换句话说, 在同一个<code>Change Number</code>里, 不同<code>patchSet</code>的change, 一定是共享同一个<code>Change-Id</code>的. 这在你上传了一个change之后, 发现他是有问题的需要修改重新上传非常有用. 你会发现当你再次上传, 你不需要告诉Gerrit你想覆盖哪个change, 他会通过<code>Change-Id</code>自动识别</p>
+<p>注意<code>Change-Id</code>并不一定是唯一的. 他只在同一个仓库的同一个分支下是唯一的.</p>
+<h5><span id="signed-off-by">Signed-Off-By</span></h5><p><code>Signed-off-by</code>这一行是<code>git commit</code>的<code>-s</code>命令自动添加的. 其实就是为了追踪真正的提交者. 因为很有可能一笔change的作者并不是你, 比如你从AOSP上下载了一些代码, 并且合入到我们的Gerrit中. 这个时候<code>Signed-off-by</code>这一行就可以记录下来作者和上传者并不是同一个人</p>
+<h5><span id="上传change">上传change</span></h5><p>Gerrit本身的文档对于上传change的高级用法有特别详尽的描述, 大家可以<a target="_blank" rel="noopener" href="https://gerrit.pt.mioffice.cn/Documentation/user-upload.html">参考</a>.</p>
+<p>我们在这里只介绍最基本的上传办法</p>
+<h5><span id="使用git-push">使用git push</span></h5><h6><span id="基本格式">基本格式</span></h6><p><code>git push</code>的基本格式为:</p>
+<pre><code class="hljs bash">git push ssh://用户名``@域名:端口/仓库 本地指针:refs/for/服务器指针</code></pre>
+
+<p>举个例子, 要把你当前<code>platform/frameworks/base</code>的<code>HEAD</code> push到服务器的<code>master-t-qcom</code>分支上的时候, 你的命令应该是</p>
+<pre><code class="hljs bash">git push ssh://用户名``@gerrit.pt.mioffice.cn:29418``/platform/frameworks/base`` HEAD:refs/for/master-t-qcom</code></pre>
+
+<p>如果提交成功，会有 “SUCCESS” 提示，并附带change link,如下图：</p>
+<p><img src="/2024/10/12/git-help/image-20241015111258229.png" alt="image-20241015111258229"></p>
+<h6><span id="快捷方式">快捷方式:</span></h6><p>如果你是用<code>repo</code>下载的代码, 那我们为<code>git push</code>提供了快捷方式</p>
+<pre><code class="hljs plaintext">git push ``origin`` HEAD:refs/for/master-t-qcom</code></pre>
+
+<p>这里的<code>origin</code>实际上是我们设置在<code>remote</code>里的服务器别名, 可以用<code>git remote -v</code>查看</p>
+<p><strong>说明</strong>：</p>
+<ul>
+<li>git.mioffice.cn 是用于研发下载代码的从服务器域名</li>
+<li>gerrit.pt.mioffice.cn 是用于研发提交代码的主服务器域名</li>
+</ul>
+<h5><span id="使用repo-upload">使用repo upload</span></h5><p>​       使用如下命令也可以上传代码, 命令里的<code>.</code>代指当前目录</p>
+<pre><code class="hljs bash">repo start localTmp
+<span class="hljs-comment">#在localTmp分支上提交东西</span>
+repo upload .</code></pre>
+
+<p>这个命令的意思是, 在本地创建一个<code>localTmp</code>分支, 然后把<code>localTmp</code>分支上的内容推送到<code>manifest</code>里的指定分支(也就是记录在<code>.repo/manifest.xml</code>里面的分支).</p>
+<p>假设你当前<code>manifest</code>里这个仓库的默认分支是<code>master-t-qcom</code>. 那么实际上这两个命令相当于执行了</p>
+<pre><code class="hljs perl">git checkout -b localTmp master-t-qcom
+<span class="hljs-comment">#上面这句是repo start localTmp命令实际执行的</span>
+git <span class="hljs-keyword">push</span> ssh:<span class="hljs-regexp">//</span>chengyang<span class="hljs-variable">@gerrit</span>.pt.mioffice.cn:<span class="hljs-number">29418</span>/platform/frameworks/ex refs/heads/localTmp:refs/<span class="hljs-keyword">for</span>/master-t-qcom
+<span class="hljs-comment">#这一句是repo upload . 最后实际执行的</span></code></pre>
+
+<p>如果你想知道当前仓库的默认分支, 其实只需要<code>repo manifest |grep &lt;仓库名&gt;</code></p>
+<p>这里有一点大家可能会注意到, 你自己用<code>git push</code>基本本地指针都是<code>HEAD</code>, 也就是你当前checkout的点.</p>
+<p>但是<code>repo upload .</code>永远push的是你当初<code>repo start</code>的分支, 在这个例子里是<code>refs/heads/localTmp</code>. 一定有小伙伴曾经遇到过明明已经<code>commit</code>了change, 结果<code>repo upload</code>却说<code>no branches ready for upload</code>.这就是因为你没有把change提交到你之前<code>repo start</code>的分支上</p>
+<p>同样, 提交成功后有 “SUCCESS” 提示，并附带change link：</p>
+<p><img src="/2024/10/12/git-help/image-20241015111531042.png" alt="image-20241015111531042"></p>
+<h3><span id="下载代码">下载代码</span></h3><p>1.需初始化环境，参考2.Git环境配置中的gerrit章节</p>
+<p>2.复制<a target="_blank" rel="noopener" href="https://bbm.pt.miui.com/releases">bbm</a>上的<code>复制全部</code>按钮初始化下载</p>
+<p><img src="/2024/10/12/git-help/image-20241015111832531.png" alt="image-20241015111832531"></p>
+<p>3.使用<code>repo sync -cd --no-tags</code>命令下载代码. 理想情况下, 下载代码应该在50分钟左右完成. 如果你下载代码十分慢且痛苦. <a target="_blank" rel="noopener" href="https://xiaomi.f.mioffice.cn/docs/dock4tc9d5fk4bb2dFnchlppZVg#">可以参考这篇文档</a></p>
+<h2><span id="5git常见问题">5.Git常见问题</span></h2><h3><span id="冲突问题">冲突问题</span></h3><p>首先介绍一下代码冲突出现的原因：</p>
+<p>情况一：开始把我们需要修改的代码拉下来，在本地修改代码的过程中，有人合入了代码，而且修改的代码与合入代码的位置十分相近，在git push 上去后，在gerrit上就会出现代码冲突的提示。而且，如果几个提交有依赖关系，只要底下的提交出现冲突，上面的提交全部都会发生代码冲突，即使它们其实并不存在冲突，这时将上面的提交每个都rebase一下就可以将冲突提示给消除掉了。</p>
+<p>情况二：基于一个比较旧的代码版本进行修改，并进行了提交，但是有新的合入把旧的给修改了，比如删除了一行，这种情况也会发生代码冲突。</p>
+<p>处理过程：git push——&gt;git status .——&gt;git diff，然后就可能会出现：</p>
+<p><img src="/2024/10/12/git-help/image-20241015140854352.png" alt="image-20241015140854352"></p>
+<p>因为基准的代码有一行删除掉了，并留下了一个空行，所以这里多处一行，那为什么下面一部分不会出现被删除的东西呢？因为之前参考的代码已经修改并合入了(我的提交只是记录修改了哪个部分，没有修改的不会记录)，所以就无法查到被删除的是什么内容，于是没有显示内容。</p>
+<p>具体到我碰到的代码冲突，我在一个节点上做了一系列的提交，这些提交有很多是修改了同一个文件，但是合入分支总有一个先后之分，一部分合入了，后面的部分就和分支里的代码冲突了。</p>
+<p><strong>在gerrit界面上进行修改</strong></p>
+<p>在冲突的提交界面上点击rebase按钮，就会在界面文件里显示如上形式的代码冲突提示，直接在上面修改并保存就可以了</p>
+<p>第二种是点击右上角的cherry pick，cherry pick到自己的分支，也会出现和上面那种方法相同的效果。</p>
+<h4><span id="手动解决冲突">手动解决冲突</span></h4><p>打开发生冲突的文件，你会看到类似以下内容：</p>
+<pre><code class="hljs bash">&lt;&lt;&lt;&lt;&lt;&lt;&lt; <span class="hljs-string">HEAD</span>
+<span class="hljs-string">这是当前分支的内容</span>
+<span class="hljs-string">=======</span>
+<span class="hljs-string">这是合并分支的内容</span>
+<span class="hljs-string">&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name</span></code></pre>
+
+<p>上面的示例展示了冲突标记 <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name</code>。它们分别代表了当前分支（HEAD）、合并进来的分支和分支名称。</p>
+<p>手动解决冲突步骤</p>
+<ul>
+<li>仔细阅读被标记的不同分支的内容，并决定应该保留哪些修改，或是进行其他修改以解决冲突。</li>
+<li>删除冲突标记 <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 之间的内容，并确保最终文件内容正确、合理。</li>
+<li>将需要的修改从两个分支的内容中合并到一个统一、正确的版本中，以解决冲突。</li>
+<li>使用 <code>git add 文件名</code> 命令将已解决冲突的文件标记为已暂存状态。此操作告知 Git 已经处理了这些文件的合并冲突。如果有多个文件发生冲突，可以一次性使用 <code>git add .</code> 命令将所有解决后的文件标记为已解决状态。</li>
+<li>执行 <code>git commit</code> 命令，Git 会为解决冲突创建一个新的合并提交。在提交信息中，建议添加描述性信息，说明这次提交解决了哪些冲突、修复了什么问题或者包含了什么功能性修改。</li>
+<li>验证合并后的代码，确保没有新的功能问题、不引入新的错误或异常。可以进行一些测试，运行应用程序，或者请同事审查代码修改，以确保所有功能和逻辑都按预期工作。</li>
+</ul>
+<p><img src="/2024/10/12/git-help/image-20241015142435004.png" alt="image-20241015142435004"></p>
+<h4><span id="remote-unpack-failed-error-missing-tree-xxx">remote unpack failed: error Missing tree xxx</span></h4><p><img src="/2024/10/12/git-help/image-20241015112148709.png" alt="image-20241015112148709"></p>
+<p>解决方法:</p>
+<pre><code class="hljs bash">step 1: git remote -v
+miui    ssh://zhangjinhao3@git.mioffice.cn:29418/miui/frameworks/interface (fetch)
+miui    ssh://zhangjinhao3@gerrit.pt.mioffice.cn:29418//miui/frameworks/interface (push)
+step 2: git push ssh://dingyingzhi@gerrit.pt.mioffice.cn:29418//platform/vendor/qcom-proprietary/mm-camerasdk HEAD:refs/for/master-u-qcom --no-thin
+<span class="hljs-comment"># 注：HEAD:refs/for/要提交的远程分支</span>
+使用命令:
+git branch -r#查看
+m/master-v -&gt; miui/master-v 
+master-v即为要提交的远程分支，因此命令为
+ git push ssh://zhangjinhao3@gerrit.pt.mioffice.cn:29418//miui/frameworks/interface HEAD:refs/for/master-v --no-thin</code></pre>
 
 
-<h2><span id="4gerrit">4.gerrit</span></h2><h2><span id="5git常见问题">5.Git常见问题</span></h2></article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><em></em><a class="button is-default" href="/2024/10/11/Hello-World/" title="Hello World!"><span class="has-text-weight-semibold">Next: Hello World!</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="pakchoi1025/pakchoi1025.github.io" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/pakchoi1025"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><a title="rss" target="_blank" rel="noopener nofollow" href="/atom.xml"><i class="iconfont icon-rss"></i></a><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Codemon 2024</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script></body></html>
+
+
+
+
+
+
+
+<p>参考文章</p>
+<p>gerrit<a target="_blank" rel="noopener" href="https://xiaomi.f.mioffice.cn/wiki/wikk4ySaLeOnJMLgODdOpfDo7hh">https://xiaomi.f.mioffice.cn/wiki/wikk4ySaLeOnJMLgODdOpfDo7hh</a></p>
+<p>repo<a target="_blank" rel="noopener" href="https://wiki.n.miui.com/pages/viewpage.action?pageId=411106638">https://wiki.n.miui.com/pages/viewpage.action?pageId=411106638</a></p>
+<p>代码冲突<a target="_blank" rel="noopener" href="https://wiki.n.miui.com/pages/viewpage.action?pageId=575356327">https://wiki.n.miui.com/pages/viewpage.action?pageId=575356327</a></p>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><em></em><a class="button is-default" href="/2024/10/11/Hello-World/" title="Hello World!"><span class="has-text-weight-semibold">Next: Hello World!</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="pakchoi1025/pakchoi1025.github.io" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/pakchoi1025"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><a title="rss" target="_blank" rel="noopener nofollow" href="/atom.xml"><i class="iconfont icon-rss"></i></a><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Codemon 2024</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script></body></html>
