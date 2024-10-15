@@ -443,8 +443,7 @@ $ git rebase origin/branch</code></pre>
 <p><code>-c</code>：仅获取服务器中的当前清单分支。</p>
 <p><code>-d</code>：将指定项目切换回清单修订版本。如果项目当前属于某个主题分支，但临时需要清单修订版本，则此选项会有所帮助。</p>
 <p><code>-f</code>：即使某个项目同步失败，也继续同步其他项目。</p>
-<pre><code class="hljs plaintext">-jthreadcount`：将同步操作拆分成多个线程，以更快地完成。切勿为其他任务预留 CPU，这会使计算机超负荷运行。如需查看可用 CPU 的数量，请先运行：`nproc --all</code></pre>
-
+<p><code>-jthreadcount</code>：将同步操作拆分成多个线程，以更快地完成。切勿为其他任务预留 CPU，这会使计算机超负荷运行。如需查看可用 CPU 的数量，请先运行：<code>nproc --all</code></p>
 <p><code>-q</code>：通过抑制状态消息来确保运行过程没有干扰。</p>
 <p><code>-s</code>：同步到当前清单中的 manifest-server 元素指定的一个已知良好 build。</p>
 <h4><span id="repo-upload">repo upload</span></h4><pre><code class="hljs bash">repo upload [project-list]</code></pre>
