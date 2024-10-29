@@ -1,0 +1,51 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Codemon's blog</title><meta name="description" content="Colors and promises how to be brave."><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Codemon's blog" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Codemon's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Archives · All</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/list"><i class="tag post-item-tag">list</i></a><a href="/tags/c"><i class="tag post-item-tag">c</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2022/11/14/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/">链表的实现</a></h2><time class="has-text-grey" datetime="2022-11-14T10:14:32.000Z">2022-11-14</time><p class="is-flex-grow-2 mt-2">链表 #include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;malloc.h&amp;gt;
+
+typedef struct Node &amp;#123;
+	int data;
+	struct Node* next;
+&amp;#125;Node, * LinkList;
+
+//头节点创建
+void CreateListHead(LinkList &amp;amp;L) &amp;#123;
+	int i;
+	L = (LinkList)malloc(sizeof(Node));
+	L-&amp;gt;next = NULL;
+&amp;#125;
+
+//节点增加
+void ListAdd(LinkList L, int n) &amp;#123;
+	int j;
+	LinkList p, s;
+	p = L;
+	while (p-&amp;gt;nex..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2022/11/14/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2022/09/26/Hello-World/20241012-150737.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2022/09/26/Hello-World/"><img class="post-cover-img js-img-fadeIn" src="/2022/09/26/Hello-World/20241012-150737.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/daily"><i class="tag post-item-tag">daily</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2022/09/26/Hello-World/">Hello World!</a></h2><time class="has-text-grey" datetime="2022-09-26T00:11:03.000Z">2022-09-26</time><p class="is-flex-grow-2 mt-2">
+今天搭建好了博客
+
+</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2022/09/26/Hello-World/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/10/30/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E9%A2%98%E7%9B%AE%E7%9A%84%E5%88%86%E9%85%8D/output2.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/10/30/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E9%A2%98%E7%9B%AE%E7%9A%84%E5%88%86%E9%85%8D/"><img class="post-cover-img js-img-fadeIn" src="/2021/10/30/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E9%A2%98%E7%9B%AE%E7%9A%84%E5%88%86%E9%85%8D/output2.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/java"><i class="tag post-item-tag">java</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/30/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E9%A2%98%E7%9B%AE%E7%9A%84%E5%88%86%E9%85%8D/">毕业设计题目的分配</a></h2><time class="has-text-grey" datetime="2021-10-29T16:00:00.000Z">2021-10-30</time><p class="is-flex-grow-2 mt-2">
+以此博客记录大二上学期我的一次java作业
+
+毕业设计题目的分配毕业设计分配过程如下： 
+
+指导教师出题目； 
+学生选择。 学生选择时常常会有两种目标： 选择自己感兴趣的题目；选择自己感兴趣的教师。 
+若教授可以带5名学生，副教授带4名学生，讲师带3名学生，请编写程序，完成毕业设计分配，让学生以选择导师或题目的形式灵活分配。
+
+ps: 为了降低难度，假设题目的数量和学生的数量刚好相等。尽你所学对程序功能进行完善，可不局限于题目基本要求。 请考虑面向对象思想，设计几个类，类中包含何种数据、何种方法。
+
+在前面改了很多次后面java老师又加了很多要求…
+
+题目要求重新整理1.首先一个教师出多道题,题数根据教师等级决定,并且题目数量要可以更改,程序灵活性要体现2.一个学生只能选一道题选过以后其他学生不能再选,当..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/30/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E9%A2%98%E7%9B%AE%E7%9A%84%E5%88%86%E9%85%8D/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><a class="extend prev" rel="prev" href="/archives/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget is-in-archive-page"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/pakchoi1025"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><a title="rss" target="_blank" rel="noopener nofollow" href="/atom.xml"><i class="iconfont icon-rss"></i></a><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Codemon 2024</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></body></html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Codemon's blog</title><meta name="description" content="Colors and promises how to be brave."><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Codemon's blog" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Codemon's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2024/10/15/Android%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/output3.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2024/10/15/Android%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"><img class="post-cover-img js-img-fadeIn" src="/2024/10/15/Android%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/output3.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/android"><i class="tag post-item-tag">android</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2024/10/15/Android%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/">Android系统的耦合与解耦</a></h2><time class="has-text-grey" datetime="2024-10-15T12:06:44.000Z">2024-10-15</time><p class="is-flex-grow-2 mt-2">
+Android系统的耦合与解耦
+从应用到系统开发，代码量从几十万行增长到几千万行，开发框架以及编译环境等与应用开发也不一样。所以如果要学习Android系统开发，我们需要先了解对应的开发框架及工具链。
+
+1.Android系统架构AOSP全称是Android Open Source Project，中文译为“Android 开放源代码项目”。手机厂商每年会基于Google开放的最新代码进行适配定制，开发属于自己的OS版本。
+我们根据Android的架构图来看看Android系统架构的设计：
+
+应用对照架构图，我们从上到下来看。在应用框架层上面应该还有一层，就是诸多的应用。这些应用可以分为2类：一类是系统应用，拥有高的系统权限，可以调用系统提供的高权限接口，例如打电话、短信、设置等应用；另外一类就是非系统应..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2024/10/15/Android%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2024/10/12/git-help/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2024/10/12/git-help/"><img class="post-cover-img js-img-fadeIn" src="/2024/10/12/git-help/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/git"><i class="tag post-item-tag">git</i></a><a href="/tags/gerrit"><i class="tag post-item-tag">gerrit</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2024/10/12/git-help/">git help</a></h2><time class="has-text-grey" datetime="2024-10-12T08:19:05.000Z">2024-10-12</time><p class="is-flex-grow-2 mt-2">
+
+
+Git基础
+1.Git工作流程
+工作区
+暂存区
+本地仓库
+远程仓库
+小结
+
+
+2.Git环境配置
+github
+gerrit
+
+
+3.常用Git命令
+HEAD
+branch
+add
+commit
+push
+实践操作：提交一次代码
+merge
+rebase
+rebase和merge的区别
+reset
+revert
+reset和revert的区别
+其他命令
+
+
+4.repo
+安装repo
+仓库目录和工作目录
+常用命令
+repo init
+repo sync
+repo upload
+repo status
+repo start dev
+
+
+
+
+5.Gerrit
+上传代码
+Change Number
+Change-Id
+Signed-Off-By
+上传change
+使用git push
+基本格式
+快捷方式:
+..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2024/10/12/git-help/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2024/07/12/about-me/20241012-150737.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2024/07/12/about-me/"><img class="post-cover-img js-img-fadeIn" src="/2024/07/12/about-me/20241012-150737.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/daily"><i class="tag post-item-tag">daily</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2024/07/12/about-me/">about me</a></h2><time class="has-text-grey" datetime="2024-07-12T01:30:00.000Z">2024-07-12</time><p class="is-flex-grow-2 mt-2">
+关于我
+  
+    🐱个人介绍
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;姓名：张缙豪
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;昵称：敲代码的猫
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;生日：2002年3月2日
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;家乡：黑龙江省黑河市
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;MBTI：INFJ （虽然是东北人但我真的很I）!!!
+  
+  
+    
+  
+
+
+
+关于工作
+💻公司：北京小米移动软件有限公司
+📱岗位：软件研发工程师
+
+
+
+关于爱好
+🎮游戏：
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;宝可梦
+..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2024/07/12/about-me/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2022/11/16/%E6%95%99%E5%B8%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/20241011-195253.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2022/11/16/%E6%95%99%E5%B8%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"><img class="post-cover-img js-img-fadeIn" src="/2022/11/16/%E6%95%99%E5%B8%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/20241011-195253.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/cpp"><i class="tag post-item-tag">cpp</i></a><a href="/tags/list"><i class="tag post-item-tag">list</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2022/11/16/%E6%95%99%E5%B8%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">教师工作量管理系统</a></h2><time class="has-text-grey" datetime="2022-11-16T11:50:22.000Z">2022-11-16</time><p class="is-flex-grow-2 mt-2">
+教师工作量管理系统（链表应用）
+题目描述教师工作量管理系统问题描述：已知一学校有4门课程（课程编号、课程名称，课时）,5个教师（教师号、姓名、性别、职称），在计算教师工作量时，其计算方法如下表：
+
+
+
+
+班级数目
+单个教学任务总课时
+
+
+
+&amp;lt;&amp;#x3D;2
+1.5*(理论课时＋实验课时）
+
+
+3
+2*(理论课时＋实验课时）
+
+
+&amp;gt;&amp;#x3D;4
+2.5*(理论课时＋实验课时）
+
+
+
+编写一程序，完成以下功能：1)能从文件导入教师的授课信息，文件格式如下：教师编号 课程编号 上课学期
+2)能从键盘录入教师授课信息；
+3)能根据上课学期、课程编号删除授课信息；
+4)能根据上课学期、课程编号修改授课教师；
+5)能计算每个学期的教师工作量；
+6)查询指定教师编号查询授课历史；
+7)能将授课信息导出到文..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2022/11/16/%E6%95%99%E5%B8%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/list"><i class="tag post-item-tag">list</i></a><a href="/tags/c"><i class="tag post-item-tag">c</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2022/11/14/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/">链表的实现</a></h2><time class="has-text-grey" datetime="2022-11-14T10:14:32.000Z">2022-11-14</time><p class="is-flex-grow-2 mt-2">链表 #include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;malloc.h&amp;gt;
+
+typedef struct Node &amp;#123;
+	int data;
+	struct Node* next;
+&amp;#125;Node, * LinkList;
+
+//头节点创建
+void CreateListHead(LinkList &amp;amp;L) &amp;#123;
+	int i;
+	L = (LinkList)malloc(sizeof(Node));
+	L-&amp;gt;next = NULL;
+&amp;#125;
+
+//节点增加
+void ListAdd(LinkList L, int n) &amp;#123;
+	int j;
+	LinkList p, s;
+	p = L;
+	while (p-&amp;gt;nex..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2022/11/14/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><style>.search-widget .search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--second-text-color);
+}
+.search-widget .search-content {
+    position: absolute;
+    left: 0;
+    top: calc(100% - 3px);
+    z-index: 2;
+
+    width: 100%;
+    height: 0;
+    max-height: 550px;
+
+    overflow: auto;
+    box-sizing: border-box;
+
+    background: var(--top-bar-bg-color);
+    backdrop-filter: blur(var(--backdropFilter));
+    -webkit-backdrop-filter: blur(var(--backdropFilter));
+
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.08);
+}
+
+.search-widget .search-content a:hover h5 {
+    color: #3273dc!important;
+}
+</style><main class="aside-card-container search-widget is-relative"><label for="searchInput"><div class="is-flex px-4" id="searchButton"><i class="iconfont icon--search1 mr-1"></i><input class="search-input is-flex-grow-1" id="searchInput" placeholder="Search everything.."></div></label><section class="search-content content" id="searchContent"></section></main><script>var searchDatabase = []
+var searchInputEl = document.getElementById('searchInput')
+var searchButtonEl = document.getElementById('searchButton')
+var searchResultEl = document.getElementById('searchContent')
+
+searchInputEl.oninput = function (evt) {
+    var searchValue = evt.srcElement.value
+    var haveSearchValue = Boolean(searchValue.trim())
+    if (!haveSearchValue) {
+        searchResultEl.style.height = 0
+        searchResultEl.innerHTML = null
+        return
+    }
+
+    var searchResults = searching(searchValue)
+
+    if (searchResults.length > 0) {
+        renderSearchResults(searchResults)
+    }
+}
+
+function renderSearchResults(results) {
+    searchResultEl.innerHTML = null
+    var fragment = document.createDocumentFragment()
+
+    results.forEach(function (item) {
+        var link = document.createElement('a')
+        var title = document.createElement('h5')
+        var content = document.createElement('p')
+
+        title.className = 'mb-1'
+        title.innerText = item.title
+        content.innerText = item.content
+
+        link.href = item.link
+        link.appendChild(title)
+        link.appendChild(content)
+        link.className = 'p-4 is-block'
+
+        fragment.appendChild(link)
+    })
+
+    searchResultEl.appendChild(fragment)
+    searchResultEl.style.height = 'auto'
+}
+
+function searching(inputText) {
+    var inputTexts = inputText.split(' ')
+    var searchResults = []
+    inputTexts.forEach(function (searchKey) {
+        var haveSearchValue = Boolean(searchKey.trim())
+        if (!haveSearchValue) return
+
+        var key = searchKey.toLowerCase()
+
+        for (var entry of searchDatabase) {
+            var title = entry.getElementsByTagName('title')[0].textContent
+            var link = entry.getElementsByTagName('link')[0].getAttribute('href')
+            var contentWithTags = entry.getElementsByTagName('content')[0].textContent
+            var rawContent = contentWithTags.trim().replace(/<[^>]+>/g, '').toLowerCase()
+
+            var LENGTH = 80
+            var finalContent = ''
+            var contentLength = rawContent.length
+            var searchResultIdx = rawContent.indexOf(key)
+
+            var startIdx = searchResultIdx - 20,
+                endIdx = startIdx + LENGTH
+
+            if (startIdx < 0) {
+                startIdx = 0
+                endIdx = 100
+            }
+
+            endIdx > contentLength && (endIdx = contentLength)
+
+            finalContent = rawContent.substring(startIdx, endIdx)
+
+            if (title.indexOf(key) > -1 || searchResultIdx > -1) {
+                searchResults.push({
+                    link: link,
+                    title: title,
+                    content: finalContent
+                })
+            }
+        }
+    })
+    return searchResults
+}
+
+searchButtonEl.onclick = function () {
+    if (searchDatabase.length > 0) return;
+
+    fetch(window.location.href + '/search.xml').then(res => res.text()).then(res => {
+        var domparser = new DOMParser
+        var doc = domparser.parseFromString(res, 'application/xml')
+        searchDatabase = doc.getElementsByTagName('search')[0].children
+    })
+}</script><main class="aside-card-container profile-widget"><!-- todo: 使用取色工具动态阴影--><section class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"><section class="is-flex is-justify-content-center avatar is-clipped skeleton"><!-- debug images "https://api.ixiaowai.cn/gqapi/gqapi.php"--><img class="js-img-fadeIn" src="/images/2024-05-30%20101518.png" alt="user avatar"></section><h3 class="user-name">Codemon</h3><blockquote class="has-text-centered is-relative"><span style="margin-bottom: 5px;">Colors and promises how to be brave.</span></blockquote><address class="has-text-centered has-text-grey"><i class="iconfont icon-location" style="margin-right: 5px;"></i><span class="has-text-grey">Beijing</span></address></section><section class="sns-container is-flex is-justify-content-center is-align-items-center"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/pakchoi1025"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><a title="rss" target="_blank" rel="noopener nofollow" href="/atom.xml"><i class="iconfont icon-rss"></i></a><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section></main><main class="aside-card-container recent-widget"><h3>Recent</h3><ul><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="/2024/10/15/Android%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/output3.jpg" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2024/10/15/Android%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/">Android系统的耦合与解耦</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2024-10-15T12:06:44.000Z">2024-10-15</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="/2024/10/12/git-help/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2024/10/12/git-help/">git help</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2024-10-12T08:19:05.000Z">2024-10-12</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="/2024/07/12/about-me/20241012-150737.jpg" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2024/07/12/about-me/">about me</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2024-07-12T01:30:00.000Z">2024-07-12</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="/2022/11/16/%E6%95%99%E5%B8%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/20241011-195253.jpg" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2022/11/16/%E6%95%99%E5%B8%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">教师工作量管理系统</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2022-11-16T11:50:22.000Z">2022-11-16</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="https://ui-avatars.com/api/?background=f5f5f5&amp;name=链表" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2022/11/14/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/">链表的实现</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2022-11-14T10:14:32.000Z">2022-11-14</time></section></li></ul></main><main class="aside-card-container archives-widget"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li></ul></section></main><main class="aside-card-container tag-widget"><h3>Tags</h3><section><a href="/tags/android"><span class="tag post-item-tag" style="margin-bottom: 5px;">android</span></a><a href="/tags/daily"><span class="tag post-item-tag" style="margin-bottom: 5px;">daily</span></a><a href="/tags/git"><span class="tag post-item-tag" style="margin-bottom: 5px;">git</span></a><a href="/tags/gerrit"><span class="tag post-item-tag" style="margin-bottom: 5px;">gerrit</span></a><a href="/tags/cpp"><span class="tag post-item-tag" style="margin-bottom: 5px;">cpp</span></a><a href="/tags/list"><span class="tag post-item-tag" style="margin-bottom: 5px;">list</span></a><a href="/tags/c"><span class="tag post-item-tag" style="margin-bottom: 5px;">c</span></a><a href="/tags/java"><span class="tag post-item-tag" style="margin-bottom: 5px;">java</span></a></section></main><main class="aside-card-container friend-widget"><h3>Friends</h3><section><a target="_blank" rel="noopener" href="https://www.google.com/"><span class="tag post-item-tag" style="margin-bottom: 5px;">Google</span></a><a target="_blank" rel="noopener" href="https://www.github.com/"><span class="tag post-item-tag" style="margin-bottom: 5px;">Github</span></a><a target="_blank" rel="noopener" href="https://v2ex.com/"><span class="tag post-item-tag" style="margin-bottom: 5px;">V2EX</span></a><a target="_blank" rel="noopener" href="https://twitter.com/"><span class="tag post-item-tag" style="margin-bottom: 5px;">Twitter</span></a></section></main></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/pakchoi1025"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><a title="rss" target="_blank" rel="noopener nofollow" href="/atom.xml"><i class="iconfont icon-rss"></i></a><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Codemon 2024</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></body></html>

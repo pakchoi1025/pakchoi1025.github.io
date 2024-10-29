@@ -1,0 +1,987 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>教师工作量管理系统</title><meta name="description" content="Colors and promises how to be brave."><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="
+教师工作量管理系统（链表应用）
+题目描述教师工作量管理系统问题描述：已知一学校有4门课程（课程编号、课程名称，课时）,5个教师（教师号、姓名、性别、职称），在计算教师工作量时，其计算方法如下表：
+
+
+
+
+班级数目
+单个教学任务总课时
+
+
+
+&amp;lt;&amp;#x3D;2
+1.5*(理论课时＋实验课时）
+
+
+3
+2*(理论课时＋实验课时）
+
+
+&amp;gt;&amp;#x3D;4
+2.5*(理论课时＋实验课时）
+
+
+
+编写一程序，完成以下功能：1)能从文件导入教师的授课信息，文件格式如下：教师编号 课程编号 上课学期
+2)能从键盘录入教师授课信息；
+3)能根据上课学期、课程编号删除授课信息；
+4)能根据上课学期、课程编号修改授课教师；
+5)能计算每个学期的教师工作量；
+6)查询指定教师编号查询授课历史；
+7)能将授课信息导出到文.."><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Codemon's blog" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Codemon's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">教师工作量管理系统</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">教师工作量管理系统（链表应用）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">初始信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">菜单部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">功能实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">查询历史信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">从键盘录入信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">信息删除和修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">工作量计算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">如何存储到工作量信息链表中？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">工作量信息计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">文件导入和输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">完整代码</span></a></li></ol></li></ol></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/cpp"><i class="tag post-item-tag">cpp</i></a><a href="/tags/list"><i class="tag post-item-tag">list</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">教师工作量管理系统</h1><time class="has-text-grey" datetime="2022-11-16T11:50:22.000Z">2022-11-16</time><article class="mt-2 post-content"><p><img src="/2022/11/16/%E6%95%99%E5%B8%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/20241011-195253.jpg" alt="20241011-195253"></p>
+<h1><span id="教师工作量管理系统链表应用">教师工作量管理系统（链表应用）</span></h1><blockquote>
+<h3><span id="题目描述">题目描述</span></h3><p>教师工作量管理系统问题描述：<br>已知一学校有4门课程（课程编号、课程名称，课时）,5个教师（教师号、姓名、性别、职称），在计算教师工作量时，其计算方法如下表：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">班级数目</th>
+<th align="center">单个教学任务总课时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&lt;&#x3D;2</td>
+<td align="center">1.5*(理论课时＋实验课时）</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">2*(理论课时＋实验课时）</td>
+</tr>
+<tr>
+<td align="center">&gt;&#x3D;4</td>
+<td align="center">2.5*(理论课时＋实验课时）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>编写一程序，完成以下功能：<br>1)能从文件导入教师的授课信息，文件格式如下：<br>教师编号 课程编号 上课学期</p>
+<p>2)能从键盘录入教师授课信息；</p>
+<p>3)能根据上课学期、课程编号删除授课信息；</p>
+<p>4)能根据上课学期、课程编号修改授课教师；</p>
+<p>5)能计算每个学期的教师工作量；</p>
+<p>6)查询指定教师编号查询授课历史；</p>
+<p>7)能将授课信息导出到文件。</p>
+</blockquote>
+<h3><span id="初始信息">初始信息</span></h3><p>将课程信息、教师信息分别用结构体数组进行存储</p>
+<pre><code class="hljs cpp"><span class="hljs-comment">//存储课程信息</span>
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Course</span> &#123;
+	<span class="hljs-type">int</span> id;<span class="hljs-comment">//课程编号</span>
+	<span class="hljs-type">int</span> TheoryCHour;<span class="hljs-comment">//理论学时</span>
+	<span class="hljs-type">int</span> ExperiCHour;<span class="hljs-comment">//实验学时</span>
+	<span class="hljs-type">char</span> name[<span class="hljs-number">20</span>];<span class="hljs-comment">//课程名称</span>
+&#125;cr[<span class="hljs-number">4</span>];
+<span class="hljs-comment">//存储教师信息</span>
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Teacher</span> &#123;
+	<span class="hljs-type">int</span> id;<span class="hljs-comment">//教师号</span>
+	<span class="hljs-type">char</span> name[<span class="hljs-number">20</span>];<span class="hljs-comment">//姓名</span>
+	<span class="hljs-type">char</span> sex[<span class="hljs-number">10</span>];<span class="hljs-comment">//性别</span>
+	<span class="hljs-type">char</span> prof[<span class="hljs-number">20</span>];<span class="hljs-comment">//职称</span>
+&#125;tr[<span class="hljs-number">5</span>];</code></pre>
+
+<p>由于只有4门课程和5名教师，所以设置初始化函数来存储初始信息</p>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InitTeacherInfo</span><span class="hljs-params">()</span> </span>&#123;<span class="hljs-comment">//教师信息初始化</span>
+	tr[<span class="hljs-number">0</span>].id = <span class="hljs-number">1001</span>;
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">0</span>].name, <span class="hljs-string">&quot;艾雪&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">0</span>].sex, <span class="hljs-string">&quot;女&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">0</span>].prof, <span class="hljs-string">&quot;副教授&quot;</span>);
+
+	tr[<span class="hljs-number">1</span>].id = <span class="hljs-number">1002</span>;
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">1</span>].name, <span class="hljs-string">&quot;张三&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">1</span>].sex, <span class="hljs-string">&quot;男&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">1</span>].prof, <span class="hljs-string">&quot;讲师&quot;</span>);
+	tr[<span class="hljs-number">2</span>].id = <span class="hljs-number">1003</span>;
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">2</span>].name, <span class="hljs-string">&quot;罗翔&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">2</span>].sex, <span class="hljs-string">&quot;男&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">2</span>].prof, <span class="hljs-string">&quot;教授&quot;</span>);
+	tr[<span class="hljs-number">3</span>].id = <span class="hljs-number">1004</span>;
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">3</span>].name, <span class="hljs-string">&quot;李四&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">3</span>].sex, <span class="hljs-string">&quot;男&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">3</span>].prof, <span class="hljs-string">&quot;副教授&quot;</span>);
+	tr[<span class="hljs-number">4</span>].id = <span class="hljs-number">1005</span>;
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">4</span>].name, <span class="hljs-string">&quot;王梅&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">4</span>].sex, <span class="hljs-string">&quot;女&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">4</span>].prof, <span class="hljs-string">&quot;助教&quot;</span>);
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InitCourseInfo</span><span class="hljs-params">()</span> </span>&#123;<span class="hljs-comment">//课程信息初始化</span>
+	cr[<span class="hljs-number">0</span>].id = <span class="hljs-number">5001</span>;
+	cr[<span class="hljs-number">0</span>].TheoryCHour = <span class="hljs-number">28</span>;
+	cr[<span class="hljs-number">0</span>].ExperiCHour = <span class="hljs-number">8</span>;
+	<span class="hljs-built_in">strcpy</span>(cr[<span class="hljs-number">0</span>].name, <span class="hljs-string">&quot;数据结构&quot;</span>);
+	cr[<span class="hljs-number">1</span>].id = <span class="hljs-number">5002</span>;
+	cr[<span class="hljs-number">1</span>].TheoryCHour = <span class="hljs-number">24</span>;
+	cr[<span class="hljs-number">1</span>].ExperiCHour = <span class="hljs-number">4</span>;
+	<span class="hljs-built_in">strcpy</span>(cr[<span class="hljs-number">1</span>].name, <span class="hljs-string">&quot;单片机&quot;</span>);
+	cr[<span class="hljs-number">2</span>].id = <span class="hljs-number">5003</span>;
+	cr[<span class="hljs-number">2</span>].TheoryCHour = <span class="hljs-number">30</span>;
+	cr[<span class="hljs-number">2</span>].ExperiCHour = <span class="hljs-number">8</span>;
+	<span class="hljs-built_in">strcpy</span>(cr[<span class="hljs-number">2</span>].name, <span class="hljs-string">&quot;c语言程序设计&quot;</span>);
+	cr[<span class="hljs-number">3</span>].id = <span class="hljs-number">5004</span>;
+	cr[<span class="hljs-number">3</span>].TheoryCHour = <span class="hljs-number">26</span>;
+	cr[<span class="hljs-number">3</span>].ExperiCHour = <span class="hljs-number">4</span>;
+	<span class="hljs-built_in">strcpy</span>(cr[<span class="hljs-number">3</span>].name, <span class="hljs-string">&quot;数据库系统&quot;</span>);
+&#125;</code></pre>
+
+<h3><span id="菜单部分">菜单部分</span></h3><p>通过参数decide传入不同的值来打印角标在不同的位置，为了实现角标移动效果，在run()函数中调用语句</p>
+<pre><code class="hljs cpp"><span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);</code></pre>
+
+<p>来进行清屏处理</p>
+<p>当键盘读取到w或↑时，对decide值进行减处理，反之加处理，当decide值越界时进行重置</p>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">printMenu1</span><span class="hljs-params">(<span class="hljs-type">int</span> decide)</span> </span>&#123;
+	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n\n\n\n\n   -------------------------------\n&quot;</span>);
+	<span class="hljs-keyword">switch</span> (decide) &#123;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">8</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	&#125;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;   -------------------------------\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;   ----按w s或↑↓选择菜单选项 ---\n&quot;</span>);
+&#125;</code></pre>
+
+<h3><span id="数据结构">数据结构</span></h3><p>将教师授课信息及工作量信息用链表进行存储。在run函数中创建头节点。当信息增加时在链表尾部进行节点增加。信息修改只需遍历链表找到对应信息位置从而修改其值即可。删除信息同理需遍历链表找到对应信息位置删除节点，使被删除节点的前驱和后继相连。</p>
+<pre><code class="hljs cpp"><span class="hljs-comment">//链表定义</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Workload</span> &#123;
+	<span class="hljs-type">int</span> TheoryCHour;<span class="hljs-comment">//课时</span>
+	<span class="hljs-type">int</span> ExperiCHour;<span class="hljs-comment">//课时</span>
+	<span class="hljs-type">int</span> ClassNum;<span class="hljs-comment">//班级数</span>
+	<span class="hljs-type">char</span> term[<span class="hljs-number">10</span>];
+	<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Workload</span>* next;
+&#125;Workload, * WorkList;
+<span class="hljs-comment">//存储教师授课信息</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span> &#123;
+	<span class="hljs-type">int</span> tId;<span class="hljs-comment">//教师号</span>
+	<span class="hljs-type">int</span> cId;<span class="hljs-comment">//课程编号</span>
+	<span class="hljs-type">char</span> term[<span class="hljs-number">10</span>];<span class="hljs-comment">//学期</span>
+	<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>* next;
+&#125;Node, * LinkList;</code></pre>
+
+<p>节点增加</p>
+<pre><code class="hljs cpp"><span class="hljs-comment">//节点增加</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ListAdd</span><span class="hljs-params">(LinkList L, <span class="hljs-type">int</span> tid, <span class="hljs-type">int</span> cid, <span class="hljs-type">char</span> str[])</span> </span>&#123;
+	<span class="hljs-type">int</span> j;
+	LinkList p, s;
+	p = L;
+	<span class="hljs-keyword">while</span> (p-&gt;next) &#123;
+		p = p-&gt;next;
+	&#125;
+	s = (LinkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(Node));
+	s-&gt;cId = cid;
+	s-&gt;tId = tid;
+	<span class="hljs-built_in">strcpy</span>(s-&gt;term, str);
+	p-&gt;next = s;
+	s-&gt;next = <span class="hljs-literal">NULL</span>;
+&#125;</code></pre>
+
+<p>链表遍历</p>
+<pre><code class="hljs cpp"><span class="hljs-comment">//遍历</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">TraverseList</span><span class="hljs-params">(LinkList L)</span> </span>&#123;
+	LinkList p, q;
+	p = L-&gt;next;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;教师授课历史\n\n\n&quot;</span>);
+	<span class="hljs-keyword">while</span> (p) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d %s\n&quot;</span>, p-&gt;cId, p-&gt;tId, p-&gt;term);
+		p = p-&gt;next;
+	&#125;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n\n\n&quot;</span>);
+&#125;</code></pre>
+
+<h3><span id="功能实现">功能实现</span></h3><h4><span id="查询历史信息">查询历史信息</span></h4><p>即遍历链表输出所有授课信息，直接调用遍历函数即可</p>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InfoShow</span><span class="hljs-params">(LinkList L)</span> </span>&#123;
+	<span class="hljs-built_in">TraverseList</span>(L);
+&#125;</code></pre>
+
+<h4><span id="从键盘录入信息">从键盘录入信息</span></h4><p>输入题目要求的教师编号，课程编号和上课学期存储到相应变量，存储成功后调用节点增加函数即可实现存储信息</p>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InfoInput</span><span class="hljs-params">(LinkList L)</span> </span>&#123;
+	<span class="hljs-type">int</span> cid, tid;
+	<span class="hljs-type">char</span> str[<span class="hljs-number">10</span>];
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     信息录入:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入教师编号:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;tid);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入课程编号:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;cid);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入上课学期:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, str);
+	<span class="hljs-built_in">ListAdd</span>(L, tid, cid, str);<span class="hljs-comment">//节点增加函数</span>
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;信息录入成功！\n&quot;</span>);
+&#125;</code></pre>
+
+<h4><span id="信息删除和修改">信息删除和修改</span></h4><p>输入课程编号和上课学期通过遍历链表查找信息，若未找到，打印“未查到该授课信息”退出函数，若找到在对应节点位置进行信息的修改和删除。</p>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InfoDelete</span><span class="hljs-params">(LinkList L)</span> </span>&#123;
+	<span class="hljs-type">int</span> cid;
+	<span class="hljs-type">int</span> flag = <span class="hljs-number">0</span>;
+	<span class="hljs-type">char</span> str[<span class="hljs-number">10</span>];
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     信息删除:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入课程编号:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;cid);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入上课学期:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, str);
+	LinkList p, q;
+	p = L;
+	<span class="hljs-keyword">while</span> (p-&gt;next) &#123;
+		<span class="hljs-keyword">if</span> (p-&gt;next-&gt;cId == cid &amp;&amp; !<span class="hljs-built_in">strcmp</span>(p-&gt;next-&gt;term, str)) &#123;
+			flag = <span class="hljs-number">1</span>;
+			<span class="hljs-keyword">break</span>;
+		&#125;
+		p = p-&gt;next;
+	&#125;
+	<span class="hljs-keyword">if</span> (!flag) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;未查到该授课信息\n&quot;</span>);
+		<span class="hljs-keyword">return</span>;
+	&#125;
+	q = p-&gt;next;
+	p-&gt;next = q-&gt;next;
+	<span class="hljs-built_in">free</span>(q);<span class="hljs-comment">//回收资源</span>
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;信息删除成功！\n&quot;</span>);
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InfoAlter</span><span class="hljs-params">(LinkList L)</span> </span>&#123;
+	<span class="hljs-type">int</span> cid, tid;
+	<span class="hljs-type">int</span> flag = <span class="hljs-number">0</span>;
+	<span class="hljs-type">char</span> str[<span class="hljs-number">10</span>];
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     信息修改:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入课程编号:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;cid);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入上课学期:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, str);
+	LinkList p;
+	p = L;
+	<span class="hljs-keyword">while</span> (p-&gt;next) &#123;
+		<span class="hljs-keyword">if</span> (p-&gt;next-&gt;cId == cid &amp;&amp; !<span class="hljs-built_in">strcmp</span>(p-&gt;next-&gt;term, str)) &#123;
+			flag = <span class="hljs-number">1</span>;
+			<span class="hljs-keyword">break</span>;
+		&#125;
+		p = p-&gt;next;
+	&#125;
+	<span class="hljs-keyword">if</span> (!flag) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;未查到该授课信息\n&quot;</span>);
+		<span class="hljs-keyword">return</span>;
+	&#125;
+	p = p-&gt;next;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     当前授课信息为:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     %d %d %s\n&quot;</span>, p-&gt;cId, p-&gt;tId, p-&gt;term);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     是否修改？（y/n）\n     &quot;</span>);<span class="hljs-comment">//询问是否修改</span>
+	<span class="hljs-type">char</span> s;
+	<span class="hljs-built_in">getchar</span>();<span class="hljs-comment">//吸收回车</span>
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%c&quot;</span>, &amp;s);
+	<span class="hljs-keyword">if</span> (s == <span class="hljs-string">&#x27;y&#x27;</span> || s == <span class="hljs-string">&#x27;Y&#x27;</span>) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入教师编号:\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;tid);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入课程编号:\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;cid);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入上课学期:\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, str);
+		p-&gt;tId = tid;
+		p-&gt;cId = cid;
+		<span class="hljs-built_in">strcpy</span>(p-&gt;term, str);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;信息修改成功！\n&quot;</span>);
+	&#125;
+	<span class="hljs-keyword">else</span> &#123;
+		<span class="hljs-keyword">return</span>;
+	&#125;
+&#125;</code></pre>
+
+<h4><span id="工作量计算">工作量计算</span></h4><p>是这里最复杂的一个函数，需要对两个链表进行操作。首先用户输入教师编号，并传参给函数，然后遍历教师信息查到后打印。接着遍历授课信息链表查找含有该教师编号的节点，一旦找到便存储到工作量信息链表中。</p>
+<h5><span id="如何存储到工作量信息链表中">如何存储到工作量信息链表中？</span></h5><p>这里假设A教师有5次授课信息在授课信息链表中，其中1学期2次，2学期2次，3学期一次。由于工作量的计算是按照学期划分的，因此采用如下存储方式：</p>
+<p>当第一次在授课信息链表中找到含有该教师编号的节点，直接存储到工作量信息链表中。</p>
+<p>从第二次找到该教师编号的节点起，都遍历一次工作量信息链表，若有学期相同的节点，则不创建新节点存储工作量信息，而是和上一次存储的工作量信息进行叠加,班级数加一。</p>
+<p>若遍历工作量信息链表后没有学期相同的节点，则再创建新节点存储。</p>
+<h5><span id="工作量信息计算">工作量信息计算</span></h5><p>遍历工作量信息链表，对于每一个节点的课时，班级数来分类计算结果并输出。</p>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">WorkCalcul</span><span class="hljs-params">(LinkList L, <span class="hljs-type">int</span> tid)</span> </span>&#123;
+	<span class="hljs-type">int</span> i, flag = <span class="hljs-number">0</span>, j;
+	LinkList p;
+	WorkList w, s, tp;
+	w = (WorkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(Workload));
+	w-&gt;next = <span class="hljs-literal">NULL</span>;
+	s = w;
+	p = L-&gt;next;
+	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;
+		<span class="hljs-keyword">if</span> (tr[i].id == tid) &#123;
+			flag = <span class="hljs-number">1</span>;
+			<span class="hljs-keyword">break</span>;
+		&#125;
+	&#125;
+	<span class="hljs-keyword">if</span> (!flag) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;教师信息不存在:\n&quot;</span>);
+		<span class="hljs-keyword">return</span>;
+	&#125;
+
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;教师信息:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;编号:%d\n&quot;</span>, tr[i].id);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;姓名:%s\n&quot;</span>, tr[i].name);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;性别:%s\n&quot;</span>, tr[i].sex);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;职称:%s\n&quot;</span>, tr[i].prof);
+	<span class="hljs-keyword">while</span> (p) &#123;
+		<span class="hljs-keyword">if</span> (p-&gt;tId == tid) &#123;
+			s = w;
+			<span class="hljs-keyword">while</span> (s-&gt;next) &#123;
+				<span class="hljs-keyword">if</span> (!<span class="hljs-built_in">strcmp</span>(s-&gt;next-&gt;term, p-&gt;term)) &#123;
+					<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) &#123;
+						<span class="hljs-keyword">if</span> (cr[i].id == p-&gt;cId) &#123;
+							s-&gt;next-&gt;ExperiCHour += cr[i].ExperiCHour;
+							s-&gt;next-&gt;TheoryCHour += cr[i].TheoryCHour;
+						&#125;
+					&#125;
+					s-&gt;next-&gt;ClassNum++;
+					<span class="hljs-keyword">break</span>;
+				&#125;
+				s = s-&gt;next;
+			&#125;
+			<span class="hljs-keyword">if</span> (!s-&gt;next) &#123;
+				tp = (WorkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(Workload));
+				tp-&gt;ClassNum = <span class="hljs-number">1</span>;
+				<span class="hljs-built_in">strcpy</span>(tp-&gt;term, p-&gt;term);
+				<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) &#123;
+					<span class="hljs-keyword">if</span> (cr[i].id == p-&gt;cId) &#123;
+						tp-&gt;ExperiCHour = cr[i].ExperiCHour;
+						tp-&gt;TheoryCHour = cr[i].TheoryCHour;
+					&#125;
+				&#125;
+				tp-&gt;next = <span class="hljs-literal">NULL</span>;
+				s-&gt;next = tp;
+			&#125;
+		&#125;
+		p = p-&gt;next;
+	&#125;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;教师工作量:\n&quot;</span>);
+	s = w-&gt;next;
+	<span class="hljs-keyword">while</span> (s) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;学期:%s &quot;</span>, s-&gt;term);
+		<span class="hljs-keyword">if</span> (s-&gt;ClassNum &lt;= <span class="hljs-number">2</span>) &#123;
+			<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;工作量:%.2f\n&quot;</span>, (s-&gt;ExperiCHour + s-&gt;TheoryCHour) * <span class="hljs-number">1.5</span>);
+		&#125;
+		<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (s-&gt;ClassNum == <span class="hljs-number">3</span>) &#123;
+			<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;工作量:%.2f\n&quot;</span>, (s-&gt;ExperiCHour + s-&gt;TheoryCHour) * <span class="hljs-number">2</span>);
+		&#125;
+		<span class="hljs-keyword">else</span> &#123;
+			<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;工作量:%.2f\n&quot;</span>, (s-&gt;ExperiCHour + s-&gt;TheoryCHour) * <span class="hljs-number">2.5</span>);
+		&#125;
+		s = s-&gt;next;
+	&#125;
+&#125;</code></pre>
+
+<h3><span id="文件导入和输出">文件导入和输出</span></h3><p>使用文件读取和写入操作，写入时直接将信息打印在txt文本中,读取时，先读取文本中字符串，再对字符串进行分解，分离出字符串中的int类型变量和字符串变量。这里注意不同的集成开发环境的编码方式不同，若和txt文本不是同一种编码方式则会出现乱码情况。</p>
+<h3><span id="完整代码">完整代码</span></h3><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;malloc.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;conio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span>
+
+<span class="hljs-comment">//存储课程信息</span>
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Course</span> &#123;
+	<span class="hljs-type">int</span> id;<span class="hljs-comment">//课程编号</span>
+	<span class="hljs-type">int</span> TheoryCHour;<span class="hljs-comment">//课时</span>
+	<span class="hljs-type">int</span> ExperiCHour;<span class="hljs-comment">//课时</span>
+	<span class="hljs-type">char</span> name[<span class="hljs-number">20</span>];<span class="hljs-comment">//课程名称</span>
+&#125;cr[<span class="hljs-number">4</span>];
+<span class="hljs-comment">//存储教师信息</span>
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Teacher</span> &#123;
+	<span class="hljs-type">int</span> id;<span class="hljs-comment">//教师号</span>
+	<span class="hljs-type">char</span> name[<span class="hljs-number">20</span>];<span class="hljs-comment">//姓名</span>
+	<span class="hljs-type">char</span> sex[<span class="hljs-number">10</span>];<span class="hljs-comment">//性别</span>
+	<span class="hljs-type">char</span> prof[<span class="hljs-number">20</span>];<span class="hljs-comment">//职称</span>
+&#125;tr[<span class="hljs-number">5</span>];
+<span class="hljs-comment">//存储每学期工作量</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Workload</span> &#123;
+	<span class="hljs-type">int</span> TheoryCHour;<span class="hljs-comment">//课时</span>
+	<span class="hljs-type">int</span> ExperiCHour;<span class="hljs-comment">//课时</span>
+	<span class="hljs-type">int</span> ClassNum;
+	<span class="hljs-type">char</span> term[<span class="hljs-number">10</span>];
+	<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Workload</span>* next;
+&#125;Workload, * WorkList;
+<span class="hljs-comment">//存储教师授课信息</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span> &#123;
+	<span class="hljs-type">int</span> tId;<span class="hljs-comment">//教师号</span>
+	<span class="hljs-type">int</span> cId;<span class="hljs-comment">//课程编号</span>
+	<span class="hljs-type">char</span> term[<span class="hljs-number">10</span>];
+	<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>* next;
+&#125;Node, * LinkList;
+<span class="hljs-comment">//节点增加</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ListAdd</span><span class="hljs-params">(LinkList L, <span class="hljs-type">int</span> tid, <span class="hljs-type">int</span> cid, <span class="hljs-type">char</span> str[])</span> </span>&#123;
+	<span class="hljs-type">int</span> j;
+	LinkList p, s;
+	p = L;
+	<span class="hljs-keyword">while</span> (p-&gt;next) &#123;
+		p = p-&gt;next;
+	&#125;
+	s = (LinkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(Node));
+	s-&gt;cId = cid;
+	s-&gt;tId = tid;
+	<span class="hljs-built_in">strcpy</span>(s-&gt;term, str);
+	p-&gt;next = s;
+	s-&gt;next = <span class="hljs-literal">NULL</span>;
+&#125;
+<span class="hljs-comment">//遍历</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">TraverseList</span><span class="hljs-params">(LinkList L)</span> </span>&#123;
+	LinkList p, q;
+	p = L-&gt;next;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;教师授课历史\n\n\n&quot;</span>);
+	<span class="hljs-keyword">while</span> (p) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d %s\n&quot;</span>, p-&gt;cId, p-&gt;tId, p-&gt;term);
+		p = p-&gt;next;
+	&#125;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n\n\n&quot;</span>);
+&#125;
+
+<span class="hljs-comment">//1.从文件导入教师的授课信息</span>
+<span class="hljs-comment">//教师编号 课程编号 上课学期</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//7.能将授课信息导出到文件</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//</span>
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InitTeacherInfo</span><span class="hljs-params">()</span> </span>&#123;
+	tr[<span class="hljs-number">0</span>].id = <span class="hljs-number">1001</span>;
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">0</span>].name, <span class="hljs-string">&quot;艾雪&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">0</span>].sex, <span class="hljs-string">&quot;女&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">0</span>].prof, <span class="hljs-string">&quot;副教授&quot;</span>);
+
+	tr[<span class="hljs-number">1</span>].id = <span class="hljs-number">1002</span>;
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">1</span>].name, <span class="hljs-string">&quot;张三&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">1</span>].sex, <span class="hljs-string">&quot;男&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">1</span>].prof, <span class="hljs-string">&quot;讲师&quot;</span>);
+	tr[<span class="hljs-number">2</span>].id = <span class="hljs-number">1003</span>;
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">2</span>].name, <span class="hljs-string">&quot;罗翔&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">2</span>].sex, <span class="hljs-string">&quot;男&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">2</span>].prof, <span class="hljs-string">&quot;教授&quot;</span>);
+	tr[<span class="hljs-number">3</span>].id = <span class="hljs-number">1004</span>;
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">3</span>].name, <span class="hljs-string">&quot;李四&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">3</span>].sex, <span class="hljs-string">&quot;男&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">3</span>].prof, <span class="hljs-string">&quot;副教授&quot;</span>);
+	tr[<span class="hljs-number">4</span>].id = <span class="hljs-number">1005</span>;
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">4</span>].name, <span class="hljs-string">&quot;王梅&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">4</span>].sex, <span class="hljs-string">&quot;女&quot;</span>);
+	<span class="hljs-built_in">strcpy</span>(tr[<span class="hljs-number">4</span>].prof, <span class="hljs-string">&quot;助教&quot;</span>);
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InitCourseInfo</span><span class="hljs-params">()</span> </span>&#123;
+	cr[<span class="hljs-number">0</span>].id = <span class="hljs-number">5001</span>;
+	cr[<span class="hljs-number">0</span>].TheoryCHour = <span class="hljs-number">28</span>;
+	cr[<span class="hljs-number">0</span>].ExperiCHour = <span class="hljs-number">8</span>;
+	<span class="hljs-built_in">strcpy</span>(cr[<span class="hljs-number">0</span>].name, <span class="hljs-string">&quot;数据结构&quot;</span>);
+	cr[<span class="hljs-number">1</span>].id = <span class="hljs-number">5002</span>;
+	cr[<span class="hljs-number">1</span>].TheoryCHour = <span class="hljs-number">24</span>;
+	cr[<span class="hljs-number">1</span>].ExperiCHour = <span class="hljs-number">4</span>;
+	<span class="hljs-built_in">strcpy</span>(cr[<span class="hljs-number">1</span>].name, <span class="hljs-string">&quot;单片机&quot;</span>);
+	cr[<span class="hljs-number">2</span>].id = <span class="hljs-number">5003</span>;
+	cr[<span class="hljs-number">2</span>].TheoryCHour = <span class="hljs-number">30</span>;
+	cr[<span class="hljs-number">2</span>].ExperiCHour = <span class="hljs-number">8</span>;
+	<span class="hljs-built_in">strcpy</span>(cr[<span class="hljs-number">2</span>].name, <span class="hljs-string">&quot;c语言程序设计&quot;</span>);
+	cr[<span class="hljs-number">3</span>].id = <span class="hljs-number">5004</span>;
+	cr[<span class="hljs-number">3</span>].TheoryCHour = <span class="hljs-number">26</span>;
+	cr[<span class="hljs-number">3</span>].ExperiCHour = <span class="hljs-number">4</span>;
+	<span class="hljs-built_in">strcpy</span>(cr[<span class="hljs-number">3</span>].name, <span class="hljs-string">&quot;数据库系统&quot;</span>);
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">printMenu1</span><span class="hljs-params">(<span class="hljs-type">int</span> decide)</span> </span>&#123;
+	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n\n\n\n\n   -------------------------------\n&quot;</span>);
+	<span class="hljs-keyword">switch</span> (decide) &#123;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-keyword">case</span> <span class="hljs-number">8</span>:
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        1.从文件导入授课信息\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        2.授课信息录入\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        3.授课信息删除\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        4.授课教师修改\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        5.工作量计算\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        6.查询授课历史\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;        7.授课信息导出到文件\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;       &gt;8.退出\n&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	&#125;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;   -------------------------------\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;   ----按w s或↑↓选择菜单选项 ---\n&quot;</span>);
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InfoInput</span><span class="hljs-params">(LinkList L)</span> </span>&#123;
+	<span class="hljs-type">int</span> cid, tid;
+	<span class="hljs-type">char</span> str[<span class="hljs-number">10</span>];
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     信息录入:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入教师编号:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;tid);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入课程编号:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;cid);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入上课学期:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, str);
+	<span class="hljs-built_in">ListAdd</span>(L, tid, cid, str);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;信息录入成功！\n&quot;</span>);
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InfoDelete</span><span class="hljs-params">(LinkList L)</span> </span>&#123;
+	<span class="hljs-type">int</span> cid;
+	<span class="hljs-type">int</span> flag = <span class="hljs-number">0</span>;
+	<span class="hljs-type">char</span> str[<span class="hljs-number">10</span>];
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     信息删除:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入课程编号:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;cid);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入上课学期:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, str);
+	LinkList p, q;
+	p = L;
+	<span class="hljs-keyword">while</span> (p-&gt;next) &#123;
+		<span class="hljs-keyword">if</span> (p-&gt;next-&gt;cId == cid &amp;&amp; !<span class="hljs-built_in">strcmp</span>(p-&gt;next-&gt;term, str)) &#123;
+			flag = <span class="hljs-number">1</span>;
+			<span class="hljs-keyword">break</span>;
+		&#125;
+		p = p-&gt;next;
+	&#125;
+	<span class="hljs-keyword">if</span> (!flag) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;未查到该授课信息\n&quot;</span>);
+		<span class="hljs-keyword">return</span>;
+	&#125;
+	q = p-&gt;next;
+	p-&gt;next = q-&gt;next;
+	<span class="hljs-built_in">free</span>(q);<span class="hljs-comment">//回收资源</span>
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;信息删除成功！\n&quot;</span>);
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InfoAlter</span><span class="hljs-params">(LinkList L)</span> </span>&#123;
+	<span class="hljs-type">int</span> cid, tid;
+	<span class="hljs-type">int</span> flag = <span class="hljs-number">0</span>;
+	<span class="hljs-type">char</span> str[<span class="hljs-number">10</span>];
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     信息修改:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入课程编号:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;cid);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入上课学期:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, str);
+	LinkList p;
+	p = L;
+	<span class="hljs-keyword">while</span> (p-&gt;next) &#123;
+		<span class="hljs-keyword">if</span> (p-&gt;next-&gt;cId == cid &amp;&amp; !<span class="hljs-built_in">strcmp</span>(p-&gt;next-&gt;term, str)) &#123;
+			flag = <span class="hljs-number">1</span>;
+			<span class="hljs-keyword">break</span>;
+		&#125;
+		p = p-&gt;next;
+	&#125;
+	<span class="hljs-keyword">if</span> (!flag) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;未查到该授课信息\n&quot;</span>);
+		<span class="hljs-keyword">return</span>;
+	&#125;
+	p = p-&gt;next;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     当前授课信息为:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     %d %d %s\n&quot;</span>, p-&gt;cId, p-&gt;tId, p-&gt;term);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     是否修改？（y/n）\n     &quot;</span>);
+	<span class="hljs-type">char</span> s;
+	<span class="hljs-built_in">getchar</span>();<span class="hljs-comment">//吸收回车</span>
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%c&quot;</span>, &amp;s);
+	<span class="hljs-keyword">if</span> (s == <span class="hljs-string">&#x27;y&#x27;</span> || s == <span class="hljs-string">&#x27;Y&#x27;</span>) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入教师编号:\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;tid);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入课程编号:\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;cid);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     请输入上课学期:\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;     &quot;</span>);
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, str);
+		p-&gt;tId = tid;
+		p-&gt;cId = cid;
+		<span class="hljs-built_in">strcpy</span>(p-&gt;term, str);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;信息修改成功！\n&quot;</span>);
+	&#125;
+	<span class="hljs-keyword">else</span> &#123;
+		<span class="hljs-keyword">return</span>;
+	&#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InfoShow</span><span class="hljs-params">(LinkList L)</span> </span>&#123;
+	<span class="hljs-built_in">TraverseList</span>(L);
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">WorkCalcul</span><span class="hljs-params">(LinkList L, <span class="hljs-type">int</span> tid)</span> </span>&#123;
+	<span class="hljs-type">int</span> i, flag = <span class="hljs-number">0</span>, j;
+	LinkList p;
+	WorkList w, s, tp;
+	w = (WorkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(Workload));
+	w-&gt;next = <span class="hljs-literal">NULL</span>;
+	s = w;
+	p = L-&gt;next;
+	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;
+		<span class="hljs-keyword">if</span> (tr[i].id == tid) &#123;
+			flag = <span class="hljs-number">1</span>;
+			<span class="hljs-keyword">break</span>;
+		&#125;
+	&#125;
+	<span class="hljs-keyword">if</span> (!flag) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;教师信息不存在:\n&quot;</span>);
+		<span class="hljs-keyword">return</span>;
+	&#125;
+
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;教师信息:\n&quot;</span>);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;编号:%d\n&quot;</span>, tr[i].id);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;姓名:%s\n&quot;</span>, tr[i].name);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;性别:%s\n&quot;</span>, tr[i].sex);
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;职称:%s\n&quot;</span>, tr[i].prof);
+	<span class="hljs-keyword">while</span> (p) &#123;
+		<span class="hljs-keyword">if</span> (p-&gt;tId == tid) &#123;
+			s = w;
+			<span class="hljs-keyword">while</span> (s-&gt;next) &#123;
+				<span class="hljs-keyword">if</span> (!<span class="hljs-built_in">strcmp</span>(s-&gt;next-&gt;term, p-&gt;term)) &#123;
+					<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) &#123;
+						<span class="hljs-keyword">if</span> (cr[i].id == p-&gt;cId) &#123;
+							s-&gt;next-&gt;ExperiCHour += cr[i].ExperiCHour;
+							s-&gt;next-&gt;TheoryCHour += cr[i].TheoryCHour;
+						&#125;
+					&#125;
+					s-&gt;next-&gt;ClassNum++;
+					<span class="hljs-keyword">break</span>;
+				&#125;
+				s = s-&gt;next;
+			&#125;
+			<span class="hljs-keyword">if</span> (!s-&gt;next) &#123;
+				tp = (WorkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(Workload));
+				tp-&gt;ClassNum = <span class="hljs-number">1</span>;
+				<span class="hljs-built_in">strcpy</span>(tp-&gt;term, p-&gt;term);
+				<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) &#123;
+					<span class="hljs-keyword">if</span> (cr[i].id == p-&gt;cId) &#123;
+						tp-&gt;ExperiCHour = cr[i].ExperiCHour;
+						tp-&gt;TheoryCHour = cr[i].TheoryCHour;
+					&#125;
+				&#125;
+				tp-&gt;next = <span class="hljs-literal">NULL</span>;
+				s-&gt;next = tp;
+			&#125;
+		&#125;
+		p = p-&gt;next;
+	&#125;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;教师工作量:\n&quot;</span>);
+	s = w-&gt;next;
+	<span class="hljs-keyword">while</span> (s) &#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;学期:%s &quot;</span>, s-&gt;term);
+		<span class="hljs-keyword">if</span> (s-&gt;ClassNum &lt;= <span class="hljs-number">2</span>) &#123;
+			<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;工作量:%.2f\n&quot;</span>, (s-&gt;ExperiCHour + s-&gt;TheoryCHour) * <span class="hljs-number">1.5</span>);
+		&#125;
+		<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (s-&gt;ClassNum == <span class="hljs-number">3</span>) &#123;
+			<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;工作量:%.2f\n&quot;</span>, (s-&gt;ExperiCHour + s-&gt;TheoryCHour) * <span class="hljs-number">2</span>);
+		&#125;
+		<span class="hljs-keyword">else</span> &#123;
+			<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;工作量:%.2f\n&quot;</span>, (s-&gt;ExperiCHour + s-&gt;TheoryCHour) * <span class="hljs-number">2.5</span>);
+		&#125;
+		s = s-&gt;next;
+	&#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;
+	<span class="hljs-type">char</span> keyIn;
+	<span class="hljs-type">int</span> decide = <span class="hljs-number">1</span>;
+	LinkList L;
+	L = (LinkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(Node));
+	L-&gt;next = <span class="hljs-literal">NULL</span>;
+begin:
+	<span class="hljs-built_in">printMenu1</span>(decide);
+	<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) &#123;
+		keyIn = _getch();
+		<span class="hljs-keyword">if</span> (keyIn == <span class="hljs-number">13</span>) &#123;
+			<span class="hljs-keyword">break</span>;<span class="hljs-comment">//回车检测</span>
+		&#125;
+		<span class="hljs-keyword">switch</span> (keyIn)
+		&#123;
+		<span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;w&#x27;</span>:
+		<span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;W&#x27;</span>:
+		<span class="hljs-keyword">case</span> <span class="hljs-number">72</span>:
+			decide--;
+			<span class="hljs-keyword">break</span>;
+		<span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;s&#x27;</span>:
+		<span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;S&#x27;</span>:
+		<span class="hljs-keyword">case</span> <span class="hljs-number">80</span>:
+			decide++;
+			<span class="hljs-keyword">break</span>;
+		<span class="hljs-keyword">default</span>:
+			<span class="hljs-keyword">break</span>;
+		&#125;
+		<span class="hljs-keyword">if</span> (decide &gt; <span class="hljs-number">8</span>) &#123;
+			decide = <span class="hljs-number">1</span>;
+		&#125;
+		<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (decide &lt; <span class="hljs-number">1</span>) &#123;
+			decide = <span class="hljs-number">8</span>;
+		&#125;
+		<span class="hljs-built_in">printMenu1</span>(decide);
+	&#125;
+	<span class="hljs-keyword">if</span> (decide == <span class="hljs-number">1</span>) &#123;<span class="hljs-comment">//1.从文件导入授课信息</span>
+		<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+		<span class="hljs-type">int</span> tid = <span class="hljs-number">0</span>, cid = <span class="hljs-number">0</span>;
+        <span class="hljs-type">int</span> flag = <span class="hljs-number">0</span>;
+        <span class="hljs-type">char</span> term[<span class="hljs-number">10</span>];
+
+        FILE* p;
+        <span class="hljs-type">char</span> ch;
+        <span class="hljs-type">char</span> str[<span class="hljs-number">10005</span>];<span class="hljs-comment">//用来存储txt文件中的字符串</span>
+        <span class="hljs-type">int</span> i, num[<span class="hljs-number">256</span>] = &#123; <span class="hljs-number">0</span> &#125;;
+        <span class="hljs-keyword">if</span> ((p = <span class="hljs-built_in">fopen</span>(<span class="hljs-string">&quot;D:\\test.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>)) == <span class="hljs-literal">NULL</span>)  <span class="hljs-comment">//以只读的方式打开test。</span>
+        &#123;
+            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;ERROR&quot;</span>);
+        &#125;
+        <span class="hljs-type">int</span> k = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (; ch != <span class="hljs-string">&#x27;\n&#x27;</span>;)
+        &#123;
+            ch = <span class="hljs-built_in">fgetc</span>(p);   <span class="hljs-comment">//ch得到p所指文件中的每一个字符</span>
+            <span class="hljs-keyword">if</span> (ch != <span class="hljs-number">32</span>) &#123;
+                str[k] = ch;
+                k++;
+            &#125;
+            <span class="hljs-keyword">else</span> &#123;
+                <span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; str[j] != <span class="hljs-string">&#x27;\0&#x27;</span>; j++) &#123;
+                    <span class="hljs-keyword">if</span> (!flag)
+                        tid = tid * <span class="hljs-number">10</span> + str[j] - <span class="hljs-string">&#x27;0&#x27;</span>;
+                    <span class="hljs-keyword">else</span>
+                        cid = cid * <span class="hljs-number">10</span> + str[j] - <span class="hljs-string">&#x27;0&#x27;</span>;
+                &#125;
+                k = <span class="hljs-number">0</span>;
+                flag = <span class="hljs-number">1</span>;
+            &#125;
+        &#125;
+        <span class="hljs-built_in">strcpy</span>(term, str);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n%d %d %s\n&quot;</span>, tid, cid, str);
+        <span class="hljs-built_in">ListAdd</span>(L, tid, cid, str);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;从文件录入信息录入成功！\n&quot;</span>);
+        <span class="hljs-built_in">fclose</span>(p);	<span class="hljs-comment">//关闭文件</span>
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;按任意键返回上一级&quot;</span>);
+		<span class="hljs-built_in">getch</span>();
+		<span class="hljs-keyword">goto</span> begin;
+	&#125;
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (decide == <span class="hljs-number">2</span>) &#123;<span class="hljs-comment">//2.授课信息录入</span>
+		<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+		<span class="hljs-built_in">InfoInput</span>(L);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;按任意键返回上一级&quot;</span>);
+		<span class="hljs-built_in">getch</span>();
+		<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+		<span class="hljs-keyword">goto</span> begin;
+	&#125;
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (decide == <span class="hljs-number">3</span>) &#123;<span class="hljs-comment">//3.授课信息删除</span>
+		<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+		<span class="hljs-built_in">InfoDelete</span>(L);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;按任意键返回上一级&quot;</span>);
+		<span class="hljs-built_in">getch</span>();
+		<span class="hljs-keyword">goto</span> begin;
+	&#125;
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (decide == <span class="hljs-number">4</span>) &#123;<span class="hljs-comment">//4.授课教师修改</span>
+		<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+		<span class="hljs-built_in">InfoAlter</span>(L);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;按任意键返回上一级&quot;</span>);
+		<span class="hljs-built_in">getch</span>();
+		<span class="hljs-keyword">goto</span> begin;
+	&#125;
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (decide == <span class="hljs-number">5</span>) &#123;<span class="hljs-comment">//5.工作量计算</span>
+		<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+		<span class="hljs-type">int</span> id;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;请输入教师编号:\n&quot;</span>);
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;id);
+		<span class="hljs-built_in">WorkCalcul</span>(L, id);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;按任意键返回上一级&quot;</span>);
+		<span class="hljs-built_in">getch</span>();
+		<span class="hljs-keyword">goto</span> begin;
+	&#125;
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (decide == <span class="hljs-number">6</span>) &#123;<span class="hljs-comment">//6.查询授课历史</span>
+		<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+		<span class="hljs-built_in">InfoShow</span>(L);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;按任意键返回上一级&quot;</span>);
+		<span class="hljs-built_in">getch</span>();
+		<span class="hljs-keyword">goto</span> begin;
+	&#125;
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (decide == <span class="hljs-number">7</span>) &#123;<span class="hljs-comment">//7.授课信息导出到文件</span>
+		<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+		FILE* f;
+		f = <span class="hljs-built_in">fopen</span>(<span class="hljs-string">&quot;D:\\info.txt&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>);<span class="hljs-comment">//导入文件路径</span>
+		<span class="hljs-keyword">if</span> (f != <span class="hljs-literal">NULL</span>)
+		&#123;
+			LinkList p, q;
+			p = L-&gt;next;
+			<span class="hljs-built_in">fputs</span>(<span class="hljs-string">&quot;教师授课信息:\n&quot;</span>, f);
+			<span class="hljs-keyword">while</span> (p) &#123;
+				<span class="hljs-built_in">fprintf</span>(f, <span class="hljs-string">&quot;%d %d %s\n&quot;</span>, p-&gt;cId, p-&gt;tId, p-&gt;term);
+				p = p-&gt;next;
+			&#125;
+			<span class="hljs-built_in">fclose</span>(f);
+			f = <span class="hljs-literal">NULL</span>;
+		&#125;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;授课信息已导出到文件D:\\info.txt\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;按任意键返回上一级&quot;</span>);
+		<span class="hljs-built_in">getch</span>();
+		<span class="hljs-keyword">goto</span> begin;
+	&#125;
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (decide == <span class="hljs-number">8</span>) &#123;<span class="hljs-comment">//退出</span>
+		<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cls&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n\n\n\n\n   -------------------------------\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n\n\n\n               Bye~\n\n\n\n\n&quot;</span>);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;   -------------------------------\n\n\n\n\n\n&quot;</span>);
+	&#125;
+
+
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+	<span class="hljs-built_in">InitTeacherInfo</span>();<span class="hljs-comment">//教师信息初始化</span>
+	<span class="hljs-built_in">InitCourseInfo</span>();<span class="hljs-comment">//课程信息初始化</span>
+	<span class="hljs-built_in">run</span>();
+
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2024/07/12/about-me/" title="about me"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: about me</span></a><a class="button is-default" href="/2022/11/14/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="链表的实现"><span class="has-text-weight-semibold">Next: 链表的实现</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="pakchoi1025/pakchoi1025.github.io" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/pakchoi1025"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><a title="rss" target="_blank" rel="noopener nofollow" href="/atom.xml"><i class="iconfont icon-rss"></i></a><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Codemon 2024</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script></body></html>

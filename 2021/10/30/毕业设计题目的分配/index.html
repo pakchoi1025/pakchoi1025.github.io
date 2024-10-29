@@ -1,0 +1,823 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>毕业设计题目的分配</title><meta name="description" content="Colors and promises how to be brave."><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="
+以此博客记录大二上学期我的一次java作业
+
+毕业设计题目的分配毕业设计分配过程如下： 
+
+指导教师出题目； 
+学生选择。 学生选择时常常会有两种目标： 选择自己感兴趣的题目；选择自己感兴趣的教师。 
+若教授可以带5名学生，副教授带4名学生，讲师带3名学生，请编写程序，完成毕业设计分配，让学生以选择导师或题目的形式灵活分配。
+
+ps: 为了降低难度，假设题目的数量和学生的数量刚好相等。尽你所学对程序功能进行完善，可不局限于题目基本要求。 请考虑面向对象思想，设计几个类，类中包含何种数据、何种方法。
+
+在前面改了很多次后面java老师又加了很多要求…
+
+题目要求重新整理1.首先一个教师出多道题,题数根据教师等级决定,并且题目数量要可以更改,程序灵活性要体现2.一个学生只能选一道题选过以后其他学生不能再选,当.."><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Codemon's blog" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Codemon's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">毕业设计题目的分配</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">毕业设计题目的分配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">题目要求重新整理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">学生类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">教师类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">a数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">b数组</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">清屏类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">main类</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/java"><i class="tag post-item-tag">java</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">毕业设计题目的分配</h1><time class="has-text-grey" datetime="2021-10-29T16:00:00.000Z">2021-10-30</time><article class="mt-2 post-content"><p><img src="/2021/10/30/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E9%A2%98%E7%9B%AE%E7%9A%84%E5%88%86%E9%85%8D/output2.jpg" alt="output2"></p>
+<p>以此博客记录大二上学期我的一次java作业</p>
+<blockquote>
+<h2><span id="毕业设计题目的分配">毕业设计题目的分配</span></h2><p>毕业设计分配过程如下： </p>
+<ol>
+<li>指导教师出题目； </li>
+<li>学生选择。 学生选择时常常会有两种目标： 选择自己感兴趣的题目；选择自己感兴趣的教师。 </li>
+<li>若教授可以带5名学生，副教授带4名学生，讲师带3名学生，请编写程序，完成毕业设计分配，让学生以选择导师或题目的形式灵活分配。</li>
+</ol>
+<p>ps: 为了降低难度，假设题目的数量和学生的数量刚好相等。<br>尽你所学对程序功能进行完善，可不局限于题目基本要求。 请考虑面向对象思想，设计几个类，类中包含何种数据、何种方法。</p>
+</blockquote>
+<p>在前面改了很多次后面java老师又加了很多要求…</p>
+<blockquote>
+<h4><span id="题目要求重新整理">题目要求重新整理</span></h4><p>1.首先一个教师出多道题,题数根据教师等级决定,并且题目数量要可以更改,程序灵活性要体现<br>2.一个学生只能选一道题选过以后其他学生不能再选,当题目已被选过时要有提示<br>3.为了方便学生选题,在选择时要把题目是否已被选过显示出来<br>4.教师要能够对学生成绩评判,学生成绩要能显示出来<br>5.学生选的题目要可更换<br>6.毕业设计题目分配的展示</p>
+</blockquote>
+<h2><span id="学生类">学生类</span></h2><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Students</span> &#123;
+	<span class="hljs-keyword">protected</span> <span class="hljs-type">int</span> num;<span class="hljs-comment">//学号</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-type">int</span> score;<span class="hljs-comment">//得分</span>
+	<span class="hljs-keyword">protected</span> String name;<span class="hljs-comment">//姓名</span>
+	<span class="hljs-keyword">protected</span> String sex;<span class="hljs-comment">//性别</span>
+	<span class="hljs-keyword">protected</span> String teacher;<span class="hljs-comment">//学生选择的题目的出题教师</span>
+	<span class="hljs-keyword">protected</span> String que;<span class="hljs-comment">//选择的题目</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Students</span> <span class="hljs-params">()</span>&#123;&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Students</span><span class="hljs-params">(String name,String sex,<span class="hljs-type">int</span> num,String teacher,String que)</span>&#123;<span class="hljs-comment">//构造方法中初始化</span>
+		<span class="hljs-built_in">this</span>.name = name;
+		<span class="hljs-built_in">this</span>.sex = sex;
+		<span class="hljs-built_in">this</span>.num = num;
+		<span class="hljs-built_in">this</span>.teacher = teacher;
+		<span class="hljs-built_in">this</span>.que = que;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setName</span><span class="hljs-params">(String name)</span>&#123;
+		<span class="hljs-built_in">this</span>.name = name;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setSex</span><span class="hljs-params">(String sex)</span>&#123;
+		<span class="hljs-built_in">this</span>.sex = sex;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setNum</span><span class="hljs-params">(<span class="hljs-type">int</span> a)</span>&#123;
+		<span class="hljs-built_in">this</span>.num = a;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setTeacher</span><span class="hljs-params">(String a)</span>&#123;
+		<span class="hljs-built_in">this</span>.teacher = a;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setQuestion</span><span class="hljs-params">(String a)</span>&#123;
+		<span class="hljs-built_in">this</span>.que = a;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setScore</span><span class="hljs-params">(<span class="hljs-type">int</span> a)</span>&#123;
+		<span class="hljs-built_in">this</span>.score = a;
+	&#125;
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getName</span><span class="hljs-params">()</span>&#123;
+		<span class="hljs-keyword">return</span> name;
+	&#125;
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getSex</span><span class="hljs-params">()</span>&#123;
+		<span class="hljs-keyword">return</span> sex;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getNum</span><span class="hljs-params">()</span>&#123;
+		<span class="hljs-keyword">return</span> num;
+	&#125;
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getTeacher</span><span class="hljs-params">()</span>&#123;
+		<span class="hljs-keyword">return</span> teacher;
+	&#125;
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getQuesion</span><span class="hljs-params">()</span>&#123;
+		<span class="hljs-keyword">return</span> que;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getScore</span><span class="hljs-params">()</span>&#123;
+		<span class="hljs-keyword">return</span> score;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">show</span><span class="hljs-params">()</span> &#123;<span class="hljs-comment">//学生信息打印</span>
+		System.out.println(<span class="hljs-string">&quot;姓名: &quot;</span>+name+<span class="hljs-string">&quot;; 性别: &quot;</span>+sex+<span class="hljs-string">&quot;; 学号: &quot;</span>+num+<span class="hljs-string">&quot;; 指导教师: &quot;</span>+teacher+<span class="hljs-string">&quot;; 题目: &quot;</span>+que+<span class="hljs-string">&quot;;&quot;</span>);
+	&#125;
+&#125;</code></pre>
+
+<h2><span id="教师类">教师类</span></h2><p>教师类复杂些,因为学生选题时 题目是否已经选过的功能实现在教师类中完成了<br>这里我添加了索引变量dex来记录选择该教师的学生,stnums是教师出题数目,这样当dex&lt;stnums时,学生可选择该教师,否则不行,教师出的题目使用字符串型数组来储存<br>这里最难理解的是a数组和b数组</p>
+<h5><span id="a数组">a数组</span></h5><p>由于学生选题后,要实现毕业设计题目的分配,因此在分配时会首先显示教师信息,对应显示选择该教师的题目的学生,由a数组记录选择该教师的学生的编号(一个编号要对应一个学生),这样方便信息展出</p>
+<h5><span id="b数组">b数组</span></h5><p>当学生选择题目标准来选题时,判断该题目是否被选用b数组来记录,即0未选&#x2F;1已选,b中数据与question相对应<br>如:question[1]被选,则b[1]&#x3D;1,question[4]未被选,则b[4]&#x3D;0,</p>
+<pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Teachers</span> &#123;<span class="hljs-comment">//教师类</span>
+	<span class="hljs-keyword">protected</span> String name;<span class="hljs-comment">//姓名</span>
+	<span class="hljs-keyword">protected</span> String level;<span class="hljs-comment">//职务</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-type">int</span> <span class="hljs-variable">stnums</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//出题数</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-variable">dex</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//已选学生数</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-type">int</span> a[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">10</span>];<span class="hljs-comment">//记选课学生编号数组</span>
+	<span class="hljs-keyword">public</span> String[] question = <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>[<span class="hljs-number">5</span>]; <span class="hljs-comment">//开设的题目</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-type">int</span> b[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">10</span>];<span class="hljs-comment">//记录题目是否被选，0未选/1已选</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Teachers</span><span class="hljs-params">()</span>&#123;&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Teachers</span><span class="hljs-params">(String name,String level,<span class="hljs-type">int</span> stnums)</span>&#123;<span class="hljs-comment">//初始化构造方法</span>
+		<span class="hljs-built_in">this</span>.name = name;
+		<span class="hljs-built_in">this</span>.level = level;
+		<span class="hljs-built_in">this</span>.stnums = stnums;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setName</span><span class="hljs-params">(String name)</span>&#123;
+		<span class="hljs-built_in">this</span>.name = name;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setlevel</span><span class="hljs-params">(String level)</span>&#123;
+		<span class="hljs-built_in">this</span>.level = level;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setnum</span><span class="hljs-params">(<span class="hljs-type">int</span> stnums)</span>&#123;
+		<span class="hljs-built_in">this</span>.stnums = stnums;
+	&#125;
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getName</span><span class="hljs-params">()</span>&#123;
+		<span class="hljs-keyword">return</span> name;
+	&#125;
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getlevel</span><span class="hljs-params">()</span>&#123;
+		<span class="hljs-keyword">return</span> level;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getnum</span><span class="hljs-params">()</span>&#123;
+		<span class="hljs-keyword">return</span> stnums;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">show</span><span class="hljs-params">()</span> &#123;<span class="hljs-comment">//教师信息打印</span>
+		System.out.println(<span class="hljs-string">&quot;姓名: &quot;</span>+name+<span class="hljs-string">&quot;; 职务: &quot;</span>+level+<span class="hljs-string">&quot;; 开设题目: &quot;</span>);
+		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i &lt; stnums;i++) &#123;
+			System.out.println(question[i]);
+		&#125;
+	&#125;
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showplus</span><span class="hljs-params">()</span> &#123;<span class="hljs-comment">//教师姓名职务打印</span>
+		System.out.println(<span class="hljs-string">&quot;姓名: &quot;</span>+name+<span class="hljs-string">&quot;; 职务: &quot;</span>+level);
+	&#125;
+&#125;
+</code></pre>
+
+<h2><span id="清屏类">清屏类</span></h2><p>该类的作用不大,而且使用受限,只有鼠标在命令框中才能实现,它的功能类似C语言的system(“cls”);只是为了程序运行的观赏性添加的,可以去掉</p>
+<p>注释:该类是我从另一个博主那学来的,这里有他的博客链接,尊重版权<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_18144681/article/details/51222405?utm_source=app&app_version=4.15.0&code=app_1562916241&uLinkId=usr1mkqgl919blen">https://blog.csdn.net/qq_18144681/article/details/51222405?utm_source=app&amp;app_version=4.15.0&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen</a></p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.awt.AWTException;
+<span class="hljs-keyword">import</span> java.awt.Robot;
+<span class="hljs-keyword">import</span> java.awt.event.InputEvent;
+<span class="hljs-keyword">import</span> java.awt.event.KeyEvent;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Clear</span> &#123;<span class="hljs-comment">//清屏程序 用于更新页面</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Clear</span><span class="hljs-params">()</span> &#123;&#125;
+	<span class="hljs-meta">@SuppressWarnings(&quot;deprecation&quot;)</span><span class="hljs-comment">//去除警告(不重要,不加也没事,只是笔者是强迫症,看着黄标警告烦)</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">clear</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> AWTException
+    &#123;
+        <span class="hljs-type">Robot</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Robot</span>();
+        r.mousePress(InputEvent.BUTTON3_MASK);       <span class="hljs-comment">// 按下鼠标右键</span>
+        r.mouseRelease(InputEvent.BUTTON3_MASK);    <span class="hljs-comment">// 释放鼠标右键</span>
+        r.keyPress(KeyEvent.VK_CONTROL);             <span class="hljs-comment">// 按下Ctrl键</span>
+        r.keyPress(KeyEvent.VK_R);                    <span class="hljs-comment">// 按下R键</span>
+        r.keyRelease(KeyEvent.VK_R);                  <span class="hljs-comment">// 释放R键</span>
+        r.keyRelease(KeyEvent.VK_CONTROL);            <span class="hljs-comment">// 释放Ctrl键</span>
+        r.delay(<span class="hljs-number">100</span>);       
+
+    &#125;
+
+&#125;</code></pre>
+
+<h2><span id="main类">main类</span></h2><p>这里我将菜单中的每一个功能都用一个方法来实现</p>
+<pre><code class="hljs java"><span class="hljs-keyword">package</span> MainPackage;
+
+<span class="hljs-keyword">import</span> java.awt.AWTException;
+<span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-comment">//！！！本程序作者： YYDS 的张缙豪大神！！！</span>
+<span class="hljs-comment">//@敲代码的猫</span>
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainClass</span> &#123;
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">teaShow</span><span class="hljs-params">(<span class="hljs-type">int</span> n, Teachers[] tea, <span class="hljs-type">int</span> teaNum)</span> &#123;<span class="hljs-comment">// 指导教师信息</span>
+		<span class="hljs-comment">// TODO teaShow</span>
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;
+			System.out.print((i + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot;: &quot;</span>);<span class="hljs-comment">// 教师编号</span>
+			tea[i].show();
+		&#125;
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-meta">@SuppressWarnings(&quot;static-access&quot;)</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">teaAdd</span><span class="hljs-params">(<span class="hljs-type">int</span> teaNum, Teachers[] tea, <span class="hljs-type">int</span> at)</span> <span class="hljs-keyword">throws</span> AWTException &#123;<span class="hljs-comment">// 指导教师信息添加</span>
+		<span class="hljs-comment">// TODO teaAdd</span>
+		<span class="hljs-meta">@SuppressWarnings(&quot;resource&quot;)</span>
+		<span class="hljs-type">Scanner</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+		<span class="hljs-type">Clear</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Clear</span>();
+		String str1, str2, s;
+		<span class="hljs-type">int</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+		System.out.println(<span class="hljs-string">&quot;请完善指导教师信息：&quot;</span>);
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= teaNum; i++) &#123;
+			<span class="hljs-comment">// 教师信息初始化</span>
+			r.clear();
+			tea[i + at - teaNum - <span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Teachers</span>();
+			System.out.println(<span class="hljs-string">&quot;第&quot;</span> + i + <span class="hljs-string">&quot;条信息&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;请输入指导教师姓名：&quot;</span>);
+			str1 = input.next();
+			tea[i + at - teaNum - <span class="hljs-number">1</span>].setName(str1);<span class="hljs-comment">// at - teaNum为已添加教师数</span>
+			<span class="hljs-keyword">do</span> &#123;<span class="hljs-comment">// 通过do-while解决输入错误后重新输入问题</span>
+				flag = <span class="hljs-number">250</span>;
+				System.out.println(<span class="hljs-string">&quot;请输入指导教师职务：(教授/副教授/讲师)&quot;</span>);
+				str2 = input.next();
+				tea[i + at - teaNum - <span class="hljs-number">1</span>].setlevel(str2);
+				<span class="hljs-keyword">if</span> (str2.equals(<span class="hljs-string">&quot;教授&quot;</span>)) &#123;<span class="hljs-comment">// 教师带学生人数初始化</span>
+					flag = <span class="hljs-number">1</span>;
+				&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (str2.equals(<span class="hljs-string">&quot;副教授&quot;</span>)) &#123;
+					flag = <span class="hljs-number">2</span>;
+				&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (str2.equals(<span class="hljs-string">&quot;讲师&quot;</span>)) &#123;
+					flag = <span class="hljs-number">3</span>;
+				&#125; <span class="hljs-keyword">else</span> &#123;
+					System.out.println(<span class="hljs-string">&quot;输入错误，请重新输入！&quot;</span>);
+					flag = <span class="hljs-number">250</span>;
+				&#125;
+			&#125; <span class="hljs-keyword">while</span> (flag == <span class="hljs-number">250</span>);
+			<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">1</span>) &#123;<span class="hljs-comment">// 设置教师出题数目</span>
+				tea[i + at - teaNum - <span class="hljs-number">1</span>].setnum(<span class="hljs-number">5</span>);
+			&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (flag == <span class="hljs-number">2</span>) &#123;
+				tea[i + at - teaNum - <span class="hljs-number">1</span>].setnum(<span class="hljs-number">4</span>);
+			&#125; <span class="hljs-keyword">else</span> &#123;
+				tea[i + at - teaNum - <span class="hljs-number">1</span>].setnum(<span class="hljs-number">3</span>);
+			&#125;
+			<span class="hljs-comment">// ----------------------------</span>
+			System.out.println(<span class="hljs-string">&quot;是否对教师出题数目进行更改？(Y/N)&quot;</span>);<span class="hljs-comment">// 教师开设题目初始化</span>
+			s = input.next();
+			<span class="hljs-keyword">if</span> (s.charAt(<span class="hljs-number">0</span>) == <span class="hljs-string">&#x27;Y&#x27;</span> || s.charAt(<span class="hljs-number">0</span>) == <span class="hljs-string">&#x27;y&#x27;</span>) &#123;
+				dexchange(tea, at);
+			&#125; <span class="hljs-keyword">else</span> &#123;
+				System.out.println(<span class="hljs-string">&quot;教师出题：&quot;</span>);
+				<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; tea[i + at - teaNum - <span class="hljs-number">1</span>].getnum(); j++) &#123;
+					System.out.println(<span class="hljs-string">&quot;请输入第&quot;</span> + (j + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot;题：&quot;</span>);
+					tea[i + at - teaNum - <span class="hljs-number">1</span>].question[j] = input.next();
+				&#125;
+			&#125;
+		&#125;
+	&#125;
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-meta">@SuppressWarnings(&quot;static-access&quot;)</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">stuAdd</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> stunum, Teachers[] tea, <span class="hljs-type">int</span> at, Students[] stu)</span> <span class="hljs-keyword">throws</span> AWTException &#123;<span class="hljs-comment">// 学生信息添加</span>
+		<span class="hljs-comment">// TODO stuAdd</span>
+		String str01, str02, str03, str04 = <span class="hljs-string">&quot;&quot;</span>, tta = <span class="hljs-string">&quot;教师&quot;</span>, pro = <span class="hljs-string">&quot;题目&quot;</span>, str = <span class="hljs-string">&quot;&quot;</span>;
+		<span class="hljs-meta">@SuppressWarnings(&quot;resource&quot;)</span>
+		<span class="hljs-type">Scanner</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+		<span class="hljs-type">Clear</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Clear</span>();
+		<span class="hljs-type">int</span> num, flag = <span class="hljs-number">0</span>, f = <span class="hljs-number">0</span>, f1 = <span class="hljs-number">0</span>, kong = <span class="hljs-number">0</span>, kong1 = <span class="hljs-number">0</span>;
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> stunum - n; i &lt; stunum; i++) &#123;
+			r.clear();
+			System.out.println(<span class="hljs-string">&quot;第&quot;</span> + (i + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot;名学生：&quot;</span>);
+			stu[i] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Students</span>();<span class="hljs-comment">//</span>
+			System.out.println(<span class="hljs-string">&quot;请输入学生姓名：&quot;</span>);
+			str01 = input.next();
+			stu[i].setName(str01);
+			System.out.println(<span class="hljs-string">&quot;请输入学生性别：（男/女）&quot;</span>);
+			str02 = input.next();
+			stu[i].setSex(str02);
+			System.out.println(<span class="hljs-string">&quot;请输入学生学号：&quot;</span>);
+			num = input.nextInt();
+			stu[i].setNum(num);
+			<span class="hljs-comment">// -----------------------------------------------------------学生选题部分</span>
+			System.out.println(<span class="hljs-string">&quot;请输入学生选课标准：(教师/题目)&quot;</span>);<span class="hljs-comment">// 根据学生选题标准进行分配</span>
+			<span class="hljs-keyword">do</span> &#123;
+				f = <span class="hljs-number">0</span>;
+				str03 = input.next();
+				<span class="hljs-keyword">if</span> (str03.equals(<span class="hljs-string">&quot;题目&quot;</span>) || str03.equals(<span class="hljs-string">&quot;教师&quot;</span>)) &#123;
+					f = <span class="hljs-number">1</span>;
+				&#125; <span class="hljs-keyword">else</span> &#123;
+					System.out.println(<span class="hljs-string">&quot;输入错误，请重新输入：&quot;</span>);
+				&#125;
+			&#125; <span class="hljs-keyword">while</span> (f == <span class="hljs-number">0</span>);
+			<span class="hljs-keyword">if</span> (str03.equals(tta)) &#123;<span class="hljs-comment">// str03 --&gt; 教师/题目</span>
+				System.out.println(<span class="hljs-string">&quot;请输入学生喜欢的指导教师：&quot;</span>);
+				<span class="hljs-keyword">do</span> &#123;
+					f1 = <span class="hljs-number">0</span>;<span class="hljs-comment">// 判断教师带学生人数是否已满</span>
+					kong = <span class="hljs-number">0</span>;
+					str04 = input.next();
+					<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; at; j++) &#123;
+						<span class="hljs-keyword">if</span> (tea[j].getName().equals(str04)) &#123;<span class="hljs-comment">// str04--&gt;教师姓名</span>
+							kong = <span class="hljs-number">1</span>;<span class="hljs-comment">// 确实是否有该教师姓名</span>
+							<span class="hljs-keyword">if</span> (tea[j].dex == tea[j].stnums) &#123;
+								f1 = <span class="hljs-number">0</span>;
+								System.out.println(<span class="hljs-string">&quot;该教师课题人数已满，请重新选择：&quot;</span>);
+							&#125; <span class="hljs-keyword">else</span> &#123;
+								f1 = <span class="hljs-number">1</span>;
+								str = str04;
+								stu[i].setTeacher(str);
+								System.out.println(<span class="hljs-string">&quot;该教师开设了如下课程：&quot;</span>);
+								<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; tea[j].stnums; k++) &#123;
+									System.out.print(tea[j].question[k] + <span class="hljs-string">&quot;  &quot;</span>);
+									<span class="hljs-keyword">if</span> (tea[j].b[k] == <span class="hljs-number">1</span>) &#123;
+										showR();
+									&#125; <span class="hljs-keyword">else</span> &#123;
+										showN();
+									&#125;
+								&#125;
+								System.out.println(<span class="hljs-string">&quot;请选择：&quot;</span>);
+								<span class="hljs-keyword">do</span> &#123;
+									flag = <span class="hljs-number">0</span>;<span class="hljs-comment">// 判断输入合法性</span>
+									kong1 = <span class="hljs-number">0</span>;<span class="hljs-comment">// 判断人满</span>
+									str04 = input.next();
+									<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; tea[j].stnums; k++) &#123;
+										<span class="hljs-keyword">if</span> (tea[j].question[k].equals(str04)) &#123;
+											kong1 = <span class="hljs-number">1</span>;
+											<span class="hljs-keyword">if</span> (tea[j].b[k] == <span class="hljs-number">0</span>) &#123;
+												stu[i].setQuestion(str04);
+												tea[j].b[k] = <span class="hljs-number">1</span>;
+												tea[j].a[tea[j].dex] = i;
+												tea[j].dex++;
+												flag = <span class="hljs-number">1</span>;
+												<span class="hljs-keyword">break</span>;
+											&#125; <span class="hljs-keyword">else</span> &#123;
+												flag = <span class="hljs-number">0</span>;
+											&#125;
+										&#125;
+										<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">1</span>)
+											<span class="hljs-keyword">break</span>;
+									&#125;
+									<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span> &amp;&amp; kong1 == <span class="hljs-number">1</span>) &#123;
+										System.out.println(<span class="hljs-string">&quot;该选题人数已满，请重新选择：&quot;</span>);
+									&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span> &amp;&amp; kong1 == <span class="hljs-number">0</span>) &#123;
+										System.out.println(<span class="hljs-string">&quot;无此题目，请重新输入：&quot;</span>);
+									&#125;
+								&#125; <span class="hljs-keyword">while</span> (flag == <span class="hljs-number">0</span>);
+							&#125;
+						&#125;
+					&#125;
+					<span class="hljs-keyword">if</span> (kong == <span class="hljs-number">0</span>) &#123;
+						System.out.println(<span class="hljs-string">&quot;查无此人，请重新输入：&quot;</span>);
+					&#125;
+				&#125; <span class="hljs-keyword">while</span> (f1 == <span class="hljs-number">0</span>);
+			&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (str03.equals(pro)) &#123;
+				System.out.println(<span class="hljs-string">&quot;所有题目展示：&quot;</span>);
+				queshow(tea, at);
+				System.out.println(<span class="hljs-string">&quot;请输入感兴趣的题目：&quot;</span>);
+				<span class="hljs-keyword">do</span> &#123;
+					flag = <span class="hljs-number">0</span>;
+					kong = <span class="hljs-number">0</span>;
+					str04 = input.next();
+					<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; at; j++) &#123;
+						<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; tea[j].getnum(); k++) &#123;
+							<span class="hljs-keyword">if</span> (tea[j].question[k].equals(str04)) &#123;
+								kong = <span class="hljs-number">1</span>;<span class="hljs-comment">// 找到题目标记</span>
+								<span class="hljs-keyword">if</span> (tea[j].b[k] == <span class="hljs-number">0</span>) &#123;
+									tea[j].b[k] = <span class="hljs-number">1</span>;
+									tea[j].a[tea[j].dex] = i;
+									tea[j].dex++;
+									flag = <span class="hljs-number">1</span>;
+									str = tea[j].getName();
+									stu[i].setTeacher(str);
+									stu[i].setQuestion(str04);
+									<span class="hljs-keyword">break</span>;
+								&#125; <span class="hljs-keyword">else</span> &#123;
+									flag = <span class="hljs-number">0</span>;
+									<span class="hljs-keyword">break</span>;
+								&#125;
+							&#125;
+						&#125;
+						<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">1</span>)
+							<span class="hljs-keyword">break</span>;
+					&#125;
+					<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span> &amp;&amp; kong == <span class="hljs-number">1</span>) &#123;
+						System.out.println(<span class="hljs-string">&quot;该选题已被选，请重新选择：&quot;</span>);
+					&#125;
+					<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span> &amp;&amp; kong == <span class="hljs-number">0</span>) &#123;
+						System.out.println(<span class="hljs-string">&quot;查无此题，请重新输入：&quot;</span>);
+					&#125;
+				&#125; <span class="hljs-keyword">while</span> (flag == <span class="hljs-number">0</span>);
+			&#125;
+		&#125;
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">stuShow</span><span class="hljs-params">(<span class="hljs-type">int</span> stunum, Students[] stu)</span> &#123;<span class="hljs-comment">// 学生信息展示</span>
+		<span class="hljs-comment">// TODO stuShow</span>
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; stunum; i++) &#123;
+			stu[i].show();
+		&#125;
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">graShow</span><span class="hljs-params">(Students[] stu, Teachers[] tea, <span class="hljs-type">int</span> at)</span> &#123;<span class="hljs-comment">// 毕业设计分配展示</span>
+		<span class="hljs-comment">// TODO graShow</span>
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; at; i++) &#123;
+			tea[i].showplus();
+			System.out.println(<span class="hljs-string">&quot;所带学生：&quot;</span>);
+			<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; tea[i].dex; j++) &#123;
+				stu[tea[i].a[j]].show();
+			&#125;
+			System.out.println(<span class="hljs-string">&quot;\n\n&quot;</span>);
+		&#125;
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">stuExchange</span><span class="hljs-params">(<span class="hljs-type">int</span> stunum, Teachers[] tea, <span class="hljs-type">int</span> at, Students[] stu)</span> &#123;<span class="hljs-comment">// 学生更改题目</span>
+		<span class="hljs-comment">// TODO stuExchange</span>
+		<span class="hljs-comment">// 分为信息录入和信息删除</span>
+		String str03, str04 = <span class="hljs-string">&quot;&quot;</span>, tta = <span class="hljs-string">&quot;教师&quot;</span>, pro = <span class="hljs-string">&quot;题目&quot;</span>, str = <span class="hljs-string">&quot;&quot;</span>, s;
+		<span class="hljs-meta">@SuppressWarnings(&quot;resource&quot;)</span>
+		<span class="hljs-type">Scanner</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+		<span class="hljs-type">int</span> n, dex = <span class="hljs-number">0</span>, flag = <span class="hljs-number">0</span>, kong = <span class="hljs-number">0</span>, kong1 = <span class="hljs-number">0</span>, f = <span class="hljs-number">0</span>, f1 = <span class="hljs-number">0</span>, x = <span class="hljs-number">0</span>;
+		System.out.println(<span class="hljs-string">&quot;请输入学生学号：&quot;</span>);
+		n = input.nextInt();<span class="hljs-comment">// 用于学号对比的中间变量</span>
+		System.out.println(<span class="hljs-string">&quot;该学生信息如下：&quot;</span>);
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; stunum; i++) &#123;
+			<span class="hljs-keyword">if</span> (stu[i].num == n) &#123;
+				stu[i].show();
+				dex = i;
+				System.out.print(<span class="hljs-string">&quot;\n&quot;</span>);
+			&#125;
+		&#125;
+		System.out.println(<span class="hljs-string">&quot;是否更改选题？(Y/N)&quot;</span>);
+		s = input.next();
+		<span class="hljs-keyword">if</span> (s.charAt(<span class="hljs-number">0</span>) == <span class="hljs-string">&#x27;Y&#x27;</span> || s.charAt(<span class="hljs-number">0</span>) == <span class="hljs-string">&#x27;y&#x27;</span>) &#123;
+			<span class="hljs-comment">// 先前信息删除</span>
+			<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; at; i++) &#123;
+				<span class="hljs-keyword">if</span> (stu[dex].getTeacher().equals(tea[i].getName())) &#123;
+					tea[i].dex--;
+					<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; tea[i].dex; j++) &#123;
+						<span class="hljs-keyword">if</span> (tea[i].a[j] == dex) &#123;
+							x = <span class="hljs-number">1</span>;
+						&#125;
+						<span class="hljs-keyword">if</span> (x == <span class="hljs-number">1</span>) &#123;
+							tea[i].a[j] = tea[i].a[j + <span class="hljs-number">1</span>];
+						&#125;
+					&#125;
+					<span class="hljs-keyword">break</span>;
+				&#125;
+			&#125;
+			<span class="hljs-comment">// 重新选题后信息录入</span>
+			System.out.println(<span class="hljs-string">&quot;请输入学生选课标准：(教师/题目)&quot;</span>);
+			<span class="hljs-keyword">do</span> &#123;
+				f = <span class="hljs-number">0</span>;
+				str03 = input.next();
+				<span class="hljs-keyword">if</span> (str03.equals(<span class="hljs-string">&quot;题目&quot;</span>) || str03.equals(<span class="hljs-string">&quot;教师&quot;</span>)) &#123;
+					f = <span class="hljs-number">1</span>;
+				&#125; <span class="hljs-keyword">else</span> &#123;
+					System.out.println(<span class="hljs-string">&quot;输入错误，请重新输入：&quot;</span>);
+				&#125;
+			&#125; <span class="hljs-keyword">while</span> (f == <span class="hljs-number">0</span>);
+			<span class="hljs-keyword">if</span> (str03.equals(tta)) &#123;
+				System.out.println(<span class="hljs-string">&quot;请输入学生喜欢的指导教师：&quot;</span>);
+				<span class="hljs-keyword">do</span> &#123;
+					flag = <span class="hljs-number">0</span>;
+					f1 = <span class="hljs-number">0</span>;
+					kong = <span class="hljs-number">0</span>;
+					str04 = input.next();
+					<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; at; j++) &#123;
+						<span class="hljs-keyword">if</span> (tea[j].getName().equals(str04)) &#123;
+							kong = <span class="hljs-number">1</span>;<span class="hljs-comment">// 确实是否有该教师姓名</span>
+							<span class="hljs-keyword">if</span> (tea[j].dex == tea[j].stnums) &#123;
+								f1 = <span class="hljs-number">0</span>;
+								System.out.println(<span class="hljs-string">&quot;该教师课题人数已满，请重新选择：&quot;</span>);
+							&#125; <span class="hljs-keyword">else</span> &#123;
+								f1 = <span class="hljs-number">1</span>;
+								str = str04;
+								System.out.println(<span class="hljs-string">&quot;该教师开设了如下课程：&quot;</span>);
+								<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; tea[j].stnums; k++) &#123;
+									System.out.println(tea[j].question[k]);
+								&#125;
+								System.out.println(<span class="hljs-string">&quot;请选择：&quot;</span>);
+								<span class="hljs-keyword">do</span> &#123;
+									flag = <span class="hljs-number">0</span>;
+									kong1 = <span class="hljs-number">0</span>;
+									str04 = input.next();
+									<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; tea[j].stnums; k++) &#123;
+										<span class="hljs-keyword">if</span> (tea[j].question[k].equals(str04)) &#123;
+											kong1 = <span class="hljs-number">1</span>;
+											<span class="hljs-keyword">if</span> (tea[j].b[k] == <span class="hljs-number">0</span>) &#123;
+												tea[j].b[k] = <span class="hljs-number">1</span>;
+												tea[j].a[tea[j].dex] = dex;
+												tea[j].dex++;
+												flag = <span class="hljs-number">1</span>;
+												<span class="hljs-keyword">break</span>;
+											&#125; <span class="hljs-keyword">else</span> &#123;
+												flag = <span class="hljs-number">0</span>;
+											&#125;
+										&#125;
+										<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">1</span>)
+											<span class="hljs-keyword">break</span>;
+									&#125;
+									<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span> &amp;&amp; kong1 == <span class="hljs-number">1</span>) &#123;
+										System.out.println(<span class="hljs-string">&quot;该选题人数已满，请重新选择：&quot;</span>);
+									&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span> &amp;&amp; kong1 == <span class="hljs-number">0</span>) &#123;
+										System.out.println(<span class="hljs-string">&quot;无此题目，请重新输入：&quot;</span>);
+									&#125;
+								&#125; <span class="hljs-keyword">while</span> (flag == <span class="hljs-number">0</span>);
+							&#125;
+
+						&#125;
+					&#125;
+					<span class="hljs-keyword">if</span> (kong == <span class="hljs-number">0</span>) &#123;
+						System.out.println(<span class="hljs-string">&quot;查无此人，请重新输入：&quot;</span>);
+					&#125;
+				&#125; <span class="hljs-keyword">while</span> (f1 == <span class="hljs-number">0</span>);
+			&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (str03.equals(pro)) &#123;
+				System.out.println(<span class="hljs-string">&quot;所有题目展示：&quot;</span>);
+				queshow(tea, at);
+				System.out.println(<span class="hljs-string">&quot;请输入感兴趣的题目：&quot;</span>);
+				<span class="hljs-keyword">do</span> &#123;
+					flag = <span class="hljs-number">0</span>;
+					kong = <span class="hljs-number">0</span>;
+					str04 = input.next();
+					<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; at; j++) &#123;
+						<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; tea[j].getnum(); k++) &#123;
+							<span class="hljs-keyword">if</span> (tea[j].question[k].equals(str04)) &#123;
+								kong = <span class="hljs-number">1</span>;<span class="hljs-comment">// 找到题目标记</span>
+								<span class="hljs-keyword">if</span> (tea[j].b[k] == <span class="hljs-number">0</span>) &#123;
+									tea[j].b[k] = <span class="hljs-number">1</span>;
+									tea[j].a[tea[j].dex] = dex;
+									tea[j].dex++;
+									flag = <span class="hljs-number">1</span>;
+									str = tea[j].getName();
+									<span class="hljs-keyword">break</span>;
+								&#125; <span class="hljs-keyword">else</span> &#123;
+									flag = <span class="hljs-number">0</span>;
+									<span class="hljs-keyword">break</span>;
+								&#125;
+							&#125;
+						&#125;
+						<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">1</span>)
+							<span class="hljs-keyword">break</span>;
+					&#125;
+					<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span> &amp;&amp; kong == <span class="hljs-number">1</span>) &#123;
+						System.out.println(<span class="hljs-string">&quot;该选题已被选，请重新选择：&quot;</span>);
+					&#125;
+					<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span> &amp;&amp; kong == <span class="hljs-number">0</span>) &#123;
+						System.out.println(<span class="hljs-string">&quot;查无此题，请重新输入：&quot;</span>);
+					&#125;
+				&#125; <span class="hljs-keyword">while</span> (flag == <span class="hljs-number">0</span>);
+			&#125;
+			stu[dex].setQuestion(str04);
+			stu[dex].setTeacher(str);
+
+		&#125;
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">juDge</span><span class="hljs-params">(Students[] stu, Teachers[] tea, <span class="hljs-type">int</span> at)</span> &#123;<span class="hljs-comment">// 成绩评判</span>
+		<span class="hljs-comment">// TODO judge</span>
+		<span class="hljs-meta">@SuppressWarnings(&quot;resource&quot;)</span>
+		<span class="hljs-type">Scanner</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+		<span class="hljs-type">int</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+		System.out.println(<span class="hljs-string">&quot;请输入指导教师姓名:&quot;</span>);
+		<span class="hljs-keyword">do</span> &#123;
+			<span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> input.next();
+			<span class="hljs-type">int</span> n;
+			<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; at; i++) &#123;
+				<span class="hljs-keyword">if</span> (tea[i].getName().equals(s)) &#123;
+					flag = <span class="hljs-number">1</span>;
+					System.out.println(<span class="hljs-string">&quot;请为学生打分:&quot;</span>);
+					<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; tea[i].dex; j++) &#123;
+						System.out.println(<span class="hljs-string">&quot;第&quot;</span> + (j + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot;名学生： &quot;</span>);
+						stu[tea[i].a[j]].show();
+						System.out.println(<span class="hljs-string">&quot;该生选题为： &quot;</span>);
+						System.out.print(stu[tea[i].a[j]].getQuesion());
+						System.out.println(<span class="hljs-string">&quot;该学生的成绩为：&quot;</span>);
+						n = input.nextInt();
+						stu[tea[i].a[j]].setScore(n);
+					&#125;
+				&#125;
+			&#125;
+			<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span>) &#123;
+				System.out.println(<span class="hljs-string">&quot;查无此人请重新输入:&quot;</span>);
+			&#125;
+		&#125; <span class="hljs-keyword">while</span> (flag == <span class="hljs-number">0</span>);
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">scoShow</span><span class="hljs-params">(Students[] stu, Teachers[] tea, <span class="hljs-type">int</span> at)</span> &#123;<span class="hljs-comment">// 成绩显示</span>
+		<span class="hljs-comment">// TODO judge</span>
+		<span class="hljs-meta">@SuppressWarnings(&quot;resource&quot;)</span>
+		<span class="hljs-type">Scanner</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+		System.out.println(<span class="hljs-string">&quot;请输入指导教师姓名:&quot;</span>);
+		<span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> input.next();
+		<span class="hljs-type">Students</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Students</span>();
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; at; i++) &#123;
+			<span class="hljs-keyword">if</span> (tea[i].getName().equals(s)) &#123;
+				System.out.print(<span class="hljs-string">&quot;该指导教师开设的毕业设计题目为： &quot;</span>);
+				<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; tea[i].getnum(); j++) &#123;
+					System.out.println(tea[i].question[j]);
+				&#125;
+				System.out.print(<span class="hljs-string">&quot;\n&quot;</span>);
+				System.out.println(<span class="hljs-string">&quot;学生成绩如下： &quot;</span>);
+				<span class="hljs-type">int</span> p;
+				<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; tea[i].dex; j++) &#123;
+					p = j;
+					<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> j; k &lt; tea[i].dex; k++) &#123;
+						<span class="hljs-keyword">if</span> (stu[tea[i].a[p]].score &gt; stu[tea[i].a[k]].score) &#123;
+							p = k;
+						&#125;
+					&#125;
+					t = stu[tea[i].a[j]];
+					stu[tea[i].a[j]] = stu[tea[i].a[p]];
+					stu[tea[i].a[p]] = t;
+				&#125;
+				<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; tea[i].dex; j++) &#123;
+					System.out.print(stu[tea[i].a[j]].getName() + <span class="hljs-string">&quot;: &quot;</span>);
+					System.out.print(stu[tea[i].a[j]].getScore() + <span class="hljs-string">&quot; &quot;</span>);
+					<span class="hljs-keyword">if</span> (stu[tea[i].a[j]].getScore() &lt; <span class="hljs-number">60</span>) &#123;
+						System.out.print(<span class="hljs-string">&quot;差&quot;</span>);
+					&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stu[tea[i].a[j]].getScore() &gt;= <span class="hljs-number">60</span> &amp;&amp; stu[tea[i].a[j]].getScore() &lt; <span class="hljs-number">90</span>) &#123;
+						System.out.print(<span class="hljs-string">&quot;良&quot;</span>);
+					&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stu[tea[i].a[j]].getScore() &gt;= <span class="hljs-number">90</span>) &#123;
+						System.out.print(<span class="hljs-string">&quot;优&quot;</span>);
+					&#125;
+					System.out.print(<span class="hljs-string">&quot;\n&quot;</span>);
+				&#125;
+				<span class="hljs-keyword">break</span>;
+			&#125;
+		&#125;
+
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">dexchange</span><span class="hljs-params">(Teachers[] tea, <span class="hljs-type">int</span> at)</span> &#123;<span class="hljs-comment">// 出题数目更改</span>
+		<span class="hljs-comment">// TODO dexchange</span>
+		<span class="hljs-meta">@SuppressWarnings(&quot;resource&quot;)</span>
+		<span class="hljs-type">Scanner</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+		<span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>, str = <span class="hljs-string">&quot;&quot;</span>;
+		<span class="hljs-type">int</span> n, flag = <span class="hljs-number">0</span>;
+		System.out.println(<span class="hljs-string">&quot;请输入教师姓名:&quot;</span>);
+		<span class="hljs-keyword">do</span> &#123;
+			str = input.next();
+			<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; at; i++) &#123;
+				<span class="hljs-keyword">if</span> (tea[i].getName().equals(str)) &#123;
+					flag = <span class="hljs-number">1</span>;
+					System.out.println(<span class="hljs-string">&quot;是否确认更改(Y/N)注：默认:教授5/副教授4/讲师3&quot;</span>);
+					s = input.next();
+					<span class="hljs-keyword">if</span> (s.charAt(<span class="hljs-number">0</span>) == <span class="hljs-string">&#x27;Y&#x27;</span> || s.charAt(<span class="hljs-number">0</span>) == <span class="hljs-string">&#x27;y&#x27;</span>) &#123;
+						System.out.println(<span class="hljs-string">&quot;请输入更改后出题数目：&quot;</span>);
+						n = input.nextInt();
+						tea[i].setnum(n);<span class="hljs-comment">// 控制教师所出题目数量，以保证出题数更改后先前题目会丢失！！！</span>
+						System.out.println(<span class="hljs-string">&quot;题目数已更改！请重新出题:&quot;</span>);
+						<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; tea[i].getnum(); j++) &#123;
+							System.out.println(<span class="hljs-string">&quot;请输入第&quot;</span> + (j + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot;题：&quot;</span>);
+							tea[i].question[j] = input.next();
+						&#125;
+					&#125;
+					<span class="hljs-keyword">break</span>;
+				&#125;
+			&#125;
+			<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span>) &#123;
+				System.out.println(<span class="hljs-string">&quot;查无此人请重新输入：&quot;</span>);
+			&#125;
+		&#125; <span class="hljs-keyword">while</span> (flag == <span class="hljs-number">0</span>);
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">queshow</span><span class="hljs-params">(Teachers[] tea, <span class="hljs-type">int</span> at)</span> &#123;<span class="hljs-comment">// 所有题目展示</span>
+		<span class="hljs-comment">// TODO dexchange</span>
+		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; at; i++) &#123;
+			<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; tea[i].getnum(); j++) &#123;
+				System.out.print(tea[i].question[j] + <span class="hljs-string">&quot;  &quot;</span>);
+				<span class="hljs-keyword">if</span> (tea[i].b[j] == <span class="hljs-number">1</span>) &#123;
+					showR();<span class="hljs-comment">// 已经被选</span>
+				&#125; <span class="hljs-keyword">else</span> &#123;
+					showN();<span class="hljs-comment">// 未被选择</span>
+				&#125;
+			&#125;
+		&#125;
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showR</span><span class="hljs-params">()</span> &#123;<span class="hljs-comment">// 输出“该题已经被选”</span>
+		System.out.println(<span class="hljs-string">&quot;该题目已经被选&quot;</span>);
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showN</span><span class="hljs-params">()</span> &#123;<span class="hljs-comment">// 输出“该题未被选”</span>
+		System.out.println(<span class="hljs-string">&quot;该题目可选择&quot;</span>);
+	&#125;
+
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+	<span class="hljs-meta">@SuppressWarnings(&quot;static-access&quot;)</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> AWTException &#123;<span class="hljs-comment">// 主类（菜单显示，菜单选项）</span>
+<span class="hljs-comment">// TODO main</span>
+		<span class="hljs-meta">@SuppressWarnings(&quot;resource&quot;)</span>
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+<span class="hljs-comment">//初始化设置</span>
+		<span class="hljs-type">Scanner</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+		<span class="hljs-type">Clear</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Clear</span>();
+		<span class="hljs-meta">@SuppressWarnings(&quot;unused&quot;)</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">select</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>, balabala = <span class="hljs-string">&quot;&quot;</span>;
+		<span class="hljs-type">int</span> <span class="hljs-variable">teaNum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, at = <span class="hljs-number">3</span>, stunum = <span class="hljs-number">0</span>, num = <span class="hljs-number">0</span>, n = <span class="hljs-number">0</span>;
+		Teachers[] tea = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Teachers</span>[<span class="hljs-number">20</span>];
+		Students[] stu = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Students</span>[<span class="hljs-number">20</span>];
+		tea[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Teachers</span>(<span class="hljs-string">&quot;唐长老&quot;</span>, <span class="hljs-string">&quot;教授&quot;</span>, <span class="hljs-number">5</span>);
+		tea[<span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Teachers</span>(<span class="hljs-string">&quot;莉莉&quot;</span>, <span class="hljs-string">&quot;副教授&quot;</span>, <span class="hljs-number">4</span>);
+		tea[<span class="hljs-number">2</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Teachers</span>(<span class="hljs-string">&quot;叶飞&quot;</span>, <span class="hljs-string">&quot;讲师&quot;</span>, <span class="hljs-number">3</span>);
+		tea[<span class="hljs-number">0</span>].question[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;新式算法的应用设计&quot;</span>;
+		tea[<span class="hljs-number">0</span>].question[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;网络安全软件的设计&quot;</span>;
+		tea[<span class="hljs-number">0</span>].question[<span class="hljs-number">2</span>] = <span class="hljs-string">&quot;单片机嵌入式的设计&quot;</span>;
+		tea[<span class="hljs-number">0</span>].question[<span class="hljs-number">3</span>] = <span class="hljs-string">&quot;教师管理系统的设计&quot;</span>;
+		tea[<span class="hljs-number">0</span>].question[<span class="hljs-number">4</span>] = <span class="hljs-string">&quot;教务在线系统的设计&quot;</span>;
+		tea[<span class="hljs-number">1</span>].question[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;医院管理系统的设计&quot;</span>;
+		tea[<span class="hljs-number">1</span>].question[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;销售管理系统的设计&quot;</span>;
+		tea[<span class="hljs-number">1</span>].question[<span class="hljs-number">2</span>] = <span class="hljs-string">&quot;班级管理系统的设计&quot;</span>;
+		tea[<span class="hljs-number">1</span>].question[<span class="hljs-number">3</span>] = <span class="hljs-string">&quot;财务管理系统的设计&quot;</span>;
+		tea[<span class="hljs-number">2</span>].question[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;菜单管理系统的设计&quot;</span>;
+		tea[<span class="hljs-number">2</span>].question[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;游戏运行系统的设计&quot;</span>;
+		tea[<span class="hljs-number">2</span>].question[<span class="hljs-number">2</span>] = <span class="hljs-string">&quot;图书管理系统的设计&quot;</span>;
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+		System.out.println(<span class="hljs-string">&quot;本程序作者：敲代码的猫 ||注：添加学生和教师人数不要超过10&quot;</span>);
+		System.out.println(<span class="hljs-string">&quot;确认？（Y/N）(选N也得确认，呵)&quot;</span>);
+		select = input.next();
+<span class="hljs-comment">//----------------------------------------------------------------------------------------</span>
+		<span class="hljs-keyword">do</span> &#123;
+			r.clear();
+			System.out.println(<span class="hljs-string">&quot;    毕业设计题目分配菜单选项：&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;      1. 当前指导教师信息显示&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;      2. 指导教师信息添加&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;      3. 学生信息添加&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;      4. 学生信息展示&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;      5. 毕业设计题目分配&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;      6. 学生更换题目&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;      7. 指导教师评判成绩&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;      8. 成绩显示&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;      9. 教师出题数目更改&quot;</span>);
+			System.out.println(<span class="hljs-string">&quot;      0. 退出\n\n&quot;</span>);
+			System.out.print(<span class="hljs-string">&quot;请输入数字键输入菜单选项：&quot;</span>);
+			n = input.nextInt();
+			<span class="hljs-keyword">switch</span> (n) &#123;
+			<span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+				r.clear();
+				System.out.println(<span class="hljs-string">&quot;指导教师信息显示:&quot;</span>);<span class="hljs-comment">//</span>
+				teaShow(at, tea, teaNum);
+				System.out.println(<span class="hljs-string">&quot;\n按任意键返回上一级&quot;</span>);
+				balabala = input.next();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+				r.clear();
+				System.out.println(<span class="hljs-string">&quot;指导教师信息添加:\n\n&quot;</span>);<span class="hljs-comment">//</span>
+				System.out.println(<span class="hljs-string">&quot;请输入添加指导教师人数：&quot;</span>);
+				teaNum = input.nextInt();
+				at += teaNum;
+				teaAdd(teaNum, tea, at);
+				System.out.println(<span class="hljs-string">&quot;\n按任意键返回上一级&quot;</span>);
+				balabala = input.next();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+				r.clear();
+				System.out.println(<span class="hljs-string">&quot;学生信息添加:&quot;</span>);<span class="hljs-comment">//</span>
+				System.out.println(<span class="hljs-string">&quot;请输入学生人数：&quot;</span>);
+				num = input.nextInt();
+				stunum += num;
+				stuAdd(num, stunum, tea, at, stu);
+				System.out.println(<span class="hljs-string">&quot;\n按任意键返回上一级&quot;</span>);
+				balabala = input.next();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+				r.clear();
+				System.out.println(<span class="hljs-string">&quot;学生信息展示:&quot;</span>);<span class="hljs-comment">//</span>
+				System.out.println(<span class="hljs-string">&quot;\n当前学生信息：&quot;</span>);
+				stuShow(stunum, stu);
+				System.out.println(<span class="hljs-string">&quot;\n按任意键返回上一级&quot;</span>);
+				balabala = input.next();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+				r.clear();
+				System.out.println(<span class="hljs-string">&quot;毕业设计题目分配:\n\n&quot;</span>);<span class="hljs-comment">//</span>
+				graShow(stu, tea, at);
+				System.out.println(<span class="hljs-string">&quot;\n按任意键返回上一级&quot;</span>);
+				balabala = input.next();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+				r.clear();
+				System.out.println(<span class="hljs-string">&quot;学生更换设计题目:&quot;</span>);<span class="hljs-comment">//</span>
+				stuExchange(stunum, tea, at, stu);
+				System.out.println(<span class="hljs-string">&quot;\n按任意键返回上一级&quot;</span>);
+				balabala = input.next();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:
+				r.clear();
+				System.out.println(<span class="hljs-string">&quot;指导教师评判成绩:\n\n&quot;</span>);<span class="hljs-comment">//</span>
+				juDge(stu, tea, at);
+				System.out.println(<span class="hljs-string">&quot;\n按任意键返回上一级&quot;</span>);
+				balabala = input.next();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-number">8</span>:
+				r.clear();
+				System.out.println(<span class="hljs-string">&quot;成绩显示:&quot;</span>);<span class="hljs-comment">//</span>
+				scoShow(stu, tea, at);
+				System.out.println(<span class="hljs-string">&quot;\n按任意键返回上一级&quot;</span>);
+				balabala = input.next();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-number">9</span>:
+				r.clear();
+				System.out.println(<span class="hljs-string">&quot;教师出题数目更改:&quot;</span>);<span class="hljs-comment">//</span>
+				System.out.println(<span class="hljs-string">&quot;！注：学生已选题的教师信息不能更改！&quot;</span>);
+				dexchange(tea, at);
+				System.out.println(<span class="hljs-string">&quot;\n按任意键返回上一级&quot;</span>);
+				balabala = input.next();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:<span class="hljs-comment">// 退出</span>
+				r.clear();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">default</span>:
+				r.clear();
+				System.out.println(<span class="hljs-string">&quot;出现错误,按任意键返回&quot;</span>);<span class="hljs-comment">//</span>
+				balabala = input.next();
+				<span class="hljs-keyword">break</span>;
+			&#125;
+		&#125; <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>);
+<span class="hljs-comment">//----------------------------------------------------------------------------------------	</span>
+		System.out.println(<span class="hljs-string">&quot;已退出&quot;</span>);<span class="hljs-comment">//</span>
+		<span class="hljs-comment">/*</span>
+<span class="hljs-comment">		 * 模板 教师信息初始 3个 教师信息添加 教师信息展示 学生信息录入 学生信息展示 学生选题（教师\题目） 毕业设计题目分配展示</span>
+<span class="hljs-comment">		 */</span>
+
+		<span class="hljs-comment">/*</span>
+<span class="hljs-comment">		 * 第二次更改 1.填加学生更换题目功能 2.添加教师评分功能 3.添加成绩显示功能，并且成绩分为优良差，还要排序=_=</span>
+<span class="hljs-comment">		 */</span>
+
+		<span class="hljs-comment">/*</span>
+<span class="hljs-comment">		 * 第三次更改 1.填写错误如何更改// 2.人数更改功能，即传说中的可扩展性// 3.一个教师出可多个题目</span>
+<span class="hljs-comment">		 */</span>
+
+		<span class="hljs-comment">/*</span>
+<span class="hljs-comment">		 * 第四次 待改进bug 1.教师信息添加（在信息添加过一次后，第二次添加报错）//</span>
+<span class="hljs-comment">		 */</span>
+
+		<span class="hljs-comment">/*</span>
+<span class="hljs-comment">		 * 第五次更改 1.教师出题已被选择的题目会显示被选择</span>
+<span class="hljs-comment">		 * </span>
+<span class="hljs-comment">		 */</span>
+	&#125;
+&#125;</code></pre>
+
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2022/09/26/Hello-World/" title="Hello World!"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: Hello World!</span></a></section><article class="mt-6 comment-container"><script async repo="pakchoi1025/pakchoi1025.github.io" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/pakchoi1025"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><a title="rss" target="_blank" rel="noopener nofollow" href="/atom.xml"><i class="iconfont icon-rss"></i></a><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Codemon 2024</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script></body></html>
